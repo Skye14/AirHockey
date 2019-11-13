@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+
+.field {
+  position: relative;
+  margin: 70px auto;
+  background: rgb(200, 200, 200);
+  background: radial-gradient(ellipse at center, rgb(200, 200, 200) 0%, rgba(150,150,150,1) 100%);
+}

@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 13px;
+    text-transform: none;
+    color: rgb(82, 82, 82);
+    line-height: 30px;
+}
+
+li span {
+    color: black;
+    padding-left: 5px;
+    text-transform: uppercase;
+}

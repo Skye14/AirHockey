@@ -1,0 +1,59 @@
+{
+  "UserSettings": {
+    "PickAvatar": "Выберите аватар"
+  },
+  "Languages": {
+    "label": "Выберите язык",
+    "en": "английский",
+    "ru": "русский"
+  },
+  "InputName": {
+    "placeholder": "Введите ваше имя"
+  },
+  "Difficulty": {
+    "label": "Выберите сложность",
+    "Easy": "Легкий",
+    "Normal": "Обычный",
+    "Hard": "Сложный",
+    "Hardcore": "Очень сложный",
+    "title": "Сложность"
+  },
+  "Score": {
+    "label": "Максимальный счет",
+    "title": "Счет",
+    "FinalScore": "Финальный счет"
+  },
+  "Button": {
+    "StartGame": "Начать игру",
+    "Quit": "выйти",
+    "Start": "Старт",
+    "Pause": "Пауза",
+    "Help": "Помощь"
+  },
+  "Canvas": {
+    "message": "Your browser does not support Canvas"
+  },
+  "HelpSheet": {
+    "GateUp": "Ворота вверх",
+    "GateDown": "Ворота вниз",
+    "KeyPress": "нажмите клавишу",
+    "ChangeSettings": "Чтобы изменить настройки, нажмите кнопку",
+    "StartPauseMessage": "Чтобы начать игру или сделать паузу, нажмите кнопку",
+    "StartPause": "пуск / пауза",
+    "SpaceMessage": "или нажмите клавишу",
+    "keySpace": "пробел",
+    "Quit": "выйти",
+    "KeyW": "W",
+    "KeyS": "S"
+  },
+  "BotName": "Мр_Ботик",
+  "GameOver": {
+    "Win": "Ты победил",
+    "Loss": "Ты проиграл"
+  },
+  "Footer": {
+    "Created": "Разработчик",
+    "DeveloperName": "Пархимович Инесса",
+    "ContactInfo": "Контактная информация"
+  }
+}

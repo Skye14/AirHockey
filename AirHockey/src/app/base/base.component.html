@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <div class="logo">Air Hockey</div>
+</mat-toolbar>
+<mat-card>
+  <h2>{{ 'UserSettings.PickAvatar' | translate }}</h2>
+  <div class="flex-container">
+
+    <div class="setting">
+      <p class="label">{{ "Languages.label" | translate }}</p>
+      <mat-radio-group>
+        <mat-radio-button [checked]="isCheckedBtn" [value]="languages.english" (change)="onSelectLanguage($event)">
+          {{ "Languages.en" | translate }}</mat-radio-button>
+        <mat-radio-button [checked]="!isCheckedBtn" [value]="languages.russian" (change)="onSelectLanguage($event)">
+          {{ "Languages.ru" | translate }}</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input matInput maxlength="15" [(ngModel)]="username" value="username">
+        <mat-placeholder>{{ "InputName.placeholder" | translate }}</mat-placeholder>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{ "Difficulty.label" | translate }}</mat-label>
+        <mat-select [(value)]="difficulty">
+          <mat-option value="{{ difficultyEnum.easy }}">
+            {{ "Difficulty.Easy" | translate }}
+          </mat-option>
+          <mat-option value="{{ difficultyEnum.normal }}">
+            {{ "Difficulty.Normal" | translate }}
+          </mat-option>
+          <mat-option value="{{ difficultyEnum.hard }}">
+            {{ "Difficulty.Hard" | translate }}
+          </mat-option>
+          <mat-option value="{{ difficultyEnum.hardcore }}">
+            {{ "Difficulty.Hardcore" | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p class="label">{{"Score.label" | translate }} : {{ maxScore }}</p>
+      <mat-slider thumbLabel step="5" min="{{ maxScoreEnum.score10 }}" max="{{ maxScoreEnum.score30 }}"
+        [(ngModel)]="maxScore" value="maxScore"></mat-slider>
+    </div>
+    <div class="flex-wrap">
+      <div *ngFor="let img of imgArr" class="avatar" (click)="onPickAvatar(img)"><img [src]="img" alt="avatar"></div>
+    </div>
+    <div class="full-avatar" *ngIf="gameSettings.img">
+      <img [src]="gameSettings.img" alt="avatar">
+    </div>
+  </div>
+  <div class="btn-block">
+    <button mat-raised-button class="btn" (click)="onStartGame()">{{ "Button.StartGame" | translate }}</button>
+  </div>
+</mat-card>

@@ -1,0 +1,32 @@
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 1%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+
+.title {
+  margin: 0 10px;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 12px;
+  text-transform: none;
+  color: rgb(61, 61, 61);
+  line-height: 21px;
+}
+
+span {
+  padding-right: 7px;
+}
+
+a {
+  fill: #bbbbbb;
+}
+
+a :hover {
+  fill: #575757;
+}
