@@ -1,2 +1,2 @@
-# AirHockey14
+# AirHockey
 browser game
