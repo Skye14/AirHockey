@@ -1,0 +1,59 @@
+{
+  "UserSettings": {
+    "PickAvatar": "Pick an avatar"
+  },
+  "Languages": {
+    "label": "Choose language",
+    "en": "english",
+    "ru": "russian"
+  },
+  "InputName": {
+    "placeholder": "Enter your name"
+  },
+  "Difficulty": {
+    "label": "Choose difficulty",
+    "Easy": "Easy",
+    "Normal": "Normal",
+    "Hard": "Hard",
+    "Hardcore": "Hard core",
+    "title": "Difficulty"
+  },
+  "Score": {
+    "label": "Max score",
+    "title": "Score",
+    "FinalScore": "Final score"
+  },
+  "Button": {
+    "StartGame": "Start game",
+    "Quit": "Quit",
+    "Start": "Start",
+    "Pause": "Pause",
+    "Help": "Help"
+  },
+  "Canvas": {
+    "message": "Ваш браузер не поддерживает Canvas"
+  },
+  "HelpSheet": {
+    "GateUp": "Gate up",
+    "GateDown": "Gate down",
+    "KeyPress": "key press",
+    "ChangeSettings": "To change the settings, press the button",
+    "StartPauseMessage": "To start the game or pause, click on the",
+    "StartPause": "start / pause",
+    "SpaceMessage": "button or click key",
+    "keySpace": "space",
+    "Quit": "quit",
+    "KeyW": "W",
+    "KeyS": "S"
+  },
+  "BotName": "Mr_Botik",
+  "GameOver": {
+    "Win": "You win",
+    "Loss": "You lose"
+  },
+  "Footer": {
+    "Created": "Created by",
+    "DeveloperName": "Inessa Parkhimovich",
+    "ContactInfo": "Contact information"
+  }
+}
