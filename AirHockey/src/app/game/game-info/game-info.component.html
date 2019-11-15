@@ -9,7 +9,9 @@
         </div>
         <div class="score">
           <p>{{ "Score.title" | translate }}</p>
-          <p class="score-message">{{score.leftGate}}</p>
+          <div class="score-message">
+            <p [@bounceAnimate]="animateForGateLeft ? 'start' : 'end'">{{score.leftGate}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,9 @@
       <div class="flex-box">
         <div class="score">
           <p>{{ "Score.title" | translate }}</p>
-          <p class="score-message">{{score.rightGate}}</p>
+          <div class="score-message">
+            <p [@bounceAnimate]="animateForGateRight ? 'start' : 'end'">{{score.rightGate}}</p>
+          </div>
         </div>
         <div class="avatar">
           <img src="assets/img/2.jpg" alt="">

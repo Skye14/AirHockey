@@ -9,9 +9,21 @@ import { GameService } from './../services/game.service';
 import { Score } from './models/score.model';
 import { HelpSheetComponent } from './help-sheet/help-sheet.component';
 import { VictoryOrLossComponent } from './victory-or-loss/victory-or-loss.component';
+import { trigger, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
     selector: 'app-game-info',
+    animations: [
+        trigger('bounceAnimate', [
+            transition('start <=> end', [
+                animate('300ms ease-in', keyframes([
+                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', color: '#8a8a8a' }),
+                    style({ transform: 'translate3d(0,-3px,0)', fontSize: '27px', color: '#ffffff' }),
+                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', color: '#8a8a8a' }),
+                ]))
+            ])
+        ]),
+    ],
     templateUrl: './game-info.component.html',
     styleUrls: ['./game-info.component.css']
 })
@@ -24,6 +36,8 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     public isPause = false;
     public gameSettings: GameSettingsModel;
     public score: Score;
+    public animateForGateRight = true;
+    public animateForGateLeft = true;
 
     constructor(private router: Router,
                 private authService: AuthService,
@@ -39,9 +53,18 @@ export class GameInfoComponent implements OnInit, OnDestroy {
 
     private checkGameScore(): void {
         this.score = new Score();
+        let scoreR = this.score.rightGate;
+        let scoreL = this.score.leftGate;
         this.interval = setInterval(() => {
             if (this.score.rightGate !== this.gameSettings.maxScore && this.score.leftGate !== this.gameSettings.maxScore) {
                 this.score = this.gameService.getScore(this.gameSettings.maxScore);
+                if (scoreR !== this.score.rightGate) {
+                    scoreR = this.score.rightGate;
+                    this.animateForGateRight = !this.animateForGateRight;
+                } else if (scoreL !== this.score.leftGate) {
+                    scoreL = this.score.leftGate;
+                    this.animateForGateLeft = !this.animateForGateLeft;
+                }
             } else {
                 this.endGame();
                 this.openVictoryOrLossPopup();
