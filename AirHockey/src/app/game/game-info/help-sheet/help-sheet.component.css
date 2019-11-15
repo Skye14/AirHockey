@@ -1,12 +1,15 @@
+.container {
+  width: 425px;
+}
+
 ul {
   list-style-type: none;
 }
 
 ul li {
-  font-family: Verdana, Tahoma, sans-serif;
-  font-size: 13px;
+  font: 400 14px Roboto,"Helvetica Neue",sans-serif;
   text-transform: none;
-  color: rgb(82, 82, 82);
+  color: rgba(0,0,0,.87);
   line-height: 30px;
 }
 
@@ -14,24 +17,40 @@ li span {
   color: black;
   padding-left: 5px;
   text-transform: uppercase;
+  font: bold 13px Verdana, Tahoma, sans-serif;
 }
 
-.block-btn {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+hr {
+  margin-top: 14px;
 }
 
-.btn {
-  height: 34px;
-  margin-top: 10px;
-  padding: 0px 20px;
-  font-size: 13px;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  text-shadow: 2px 1px 4px rgb(0, 0, 0);
-  text-transform: uppercase;
-  outline: none;
-  border-radius: 5px;
-  letter-spacing: 4px;
+.block-close {
+  width: 100%;
+  display: flex;
+  margin-top: 14px;
+  justify-content: flex-end;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.block-close :hover {
+  background: rgb(236, 235, 235);
+  border-radius: 50%;
+}
+
+.block-close :active {
+  background: rgb(221, 221, 221);
+  border-radius: 50%;
+}
+
+
+.material-icons {
+  color: #f83a3a;
+  line-height: 40px;
 }

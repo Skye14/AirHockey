@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <ul>
     <li>
       {{ "HelpSheet.GateUp" | translate }}: {{ "HelpSheet.KeyPress" | translate }}
@@ -15,7 +15,10 @@
       <span>&laquo;{{ "HelpSheet.keySpace" | translate }}&raquo;</span>
     </li>
   </ul>
-  <div class="block-btn">
-    <button mat-raised-button color="primary" class="btn" mat-dialog-close>{{ "HelpSheet.BtnClose" | translate }}</button>
+  <hr>
+  <div class="block-close">
+    <p mat-dialog-close class="close">
+      <i class="material-icons">close</i>
+    </p>
   </div>
 </div>

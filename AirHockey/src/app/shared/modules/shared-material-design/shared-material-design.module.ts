@@ -11,6 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatSlideToggleModule,
         MatRadioModule,
         MatSliderModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule
     ],
     exports: [
         MatToolbarModule,
@@ -36,7 +38,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatSlideToggleModule,
         MatRadioModule,
         MatSliderModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule
     ]
 })
 export class SharedMaterialDesignModule { }
