@@ -19,9 +19,7 @@ import { SpeedOfBallEnum } from './enums/speed-of-ball-enum.enum';
 export class GameFieldComponent implements OnInit, OnDestroy {
     @ViewChild('canvas', { static: true })
     private canvas: ElementRef<HTMLCanvasElement>;
-    private contextGateLeft: CanvasRenderingContext2D;
-    private contextGateRight: CanvasRenderingContext2D;
-    private contextBall: CanvasRenderingContext2D;
+    private contextCanvas: CanvasRenderingContext2D;
     private subscription: Subscription;
     private intervalBall;
     private intervalGate;
@@ -47,9 +45,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        this.contextGateLeft = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
-        this.contextGateRight = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
-        this.contextBall = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
+        this.contextCanvas = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
         this.regulateDifficultyOfGame();
         this.moveBall();
         this.changePositionOfGates();
@@ -57,21 +53,23 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     }
 
     private draw(): void {
-        this.contextGateLeft.clearRect(0, 0, this.field.width, this.field.height);
+        this.contextCanvas.clearRect(0, 0, this.field.width, this.field.height);
 
-        this.contextGateLeft.fillStyle = '#161616';
-        this.contextGateLeft.fillRect(0, this.gateLeft.positionY, this.gateLeft.width, this.gateLeft.height);
+        this.contextCanvas.strokeStyle = 'rgba(33, 180, 226, 1)';
+        this.contextCanvas.strokeRect(0, 0, this.field.width, this.field.height);
 
-        this.contextGateRight.fillStyle = '#161616';
+        this.contextCanvas.fillStyle = '#161616';
+        this.contextCanvas.fillRect(0, this.gateLeft.positionY, this.gateLeft.width, this.gateLeft.height);
+
+        this.contextCanvas.fillStyle = '#161616';
         const positionXGateRight = this.field.width - this.gateRight.width;
-        this.contextGateRight.fillRect(positionXGateRight, this.gateRight.positionY, this.gateRight.width, this.gateRight.height);
+        this.contextCanvas.fillRect(positionXGateRight, this.gateRight.positionY, this.gateRight.width, this.gateRight.height);
 
-        this.contextBall.beginPath();
-        this.contextBall.fillStyle = '#161616';
-        this.contextBall.arc(this.ball.positionX, this.ball.positionY, this.ball.width, 0, 2 * Math.PI, true);
-        this.contextBall.fill();
-        this.contextBall.closePath();
-
+        this.contextCanvas.beginPath();
+        this.contextCanvas.fillStyle = '#161616';
+        this.contextCanvas.arc(this.ball.positionX, this.ball.positionY, this.ball.width, 0, 2 * Math.PI, true);
+        this.contextCanvas.fill();
+        this.contextCanvas.closePath();
     }
 
     private regulateDifficultyOfGame(): void {
