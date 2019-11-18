@@ -37,14 +37,13 @@
     "GateUp": "Ворота вверх",
     "GateDown": "Ворота вниз",
     "KeyPress": "нажмите клавишу",
-    "ChangeSettings": "Чтобы изменить настройки, нажмите кнопку",
     "StartPauseMessage": "Чтобы начать игру или сделать паузу, нажмите кнопку",
     "StartPause": "старт / пауза",
     "SpaceMessage": "или нажмите клавишу",
     "keySpace": "пробел",
-    "Quit": "выйти",
     "KeyW": "W",
-    "KeyS": "S"
+    "KeyS": "S",
+    "BtnClose": "Закрыть"
   },
   "BotName": "Мр_Ботик",
   "GameOver": {

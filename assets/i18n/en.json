@@ -37,14 +37,13 @@
     "GateUp": "Gate up",
     "GateDown": "Gate down",
     "KeyPress": "key press",
-    "ChangeSettings": "To change the settings, press the button",
     "StartPauseMessage": "To start the game or pause, click on the",
     "StartPause": "start / pause",
     "SpaceMessage": "button or click key",
     "keySpace": "space",
-    "Quit": "quit",
     "KeyW": "W",
-    "KeyS": "S"
+    "KeyS": "S",
+    "BtnClose": "Close"
   },
   "BotName": "Mr_Botik",
   "GameOver": {
