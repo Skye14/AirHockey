@@ -1,126 +1,121 @@
 .mat-toolbar {
-  /* background: #9E9E9E; */
-  text-align: center;
-  box-shadow: 0 6px 20px -8px rgb(151, 151, 151);
-  background: linear-gradient(to bottom, #5a5a5a 51%, #333333 100%);
+    text-align: center;
+    box-shadow: 0 6px 20px -8px rgb(151, 151, 151);
+    background: linear-gradient(to bottom, #5a5a5a 51%, #333333 100%);
 }
 
 .logo {
-  width: 100%;
-  /* color: #F5F5F5;
-  text-shadow: 2px 3px 2px rgb(0, 0, 0);
-  font-size: 29px;
-  letter-spacing: 7px; */
-  font-size: 29px;
-  color: #F5F5F5;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-  text-shadow: 4px 2px 3px rgb(0, 0, 0);
-  letter-spacing: 3px;
+    width: 100%;
+    font-size: 29px;
+    color: #F5F5F5;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow: 4px 2px 3px rgb(0, 0, 0);
+    letter-spacing: 3px;
 }
 
 .mat-card {
-  width: 75%;
-  margin: 3% auto;
-  height: 500px;
+    width: 75%;
+    margin: 3% auto;
+    height: 500px;
 }
 
 h2 {
-  padding-top: 2%;
-  text-align: center;
-  text-shadow: 2px 3px 2px rgb(189, 189, 189);
-  letter-spacing: 7px;
+    padding-top: 2%;
+    text-align: center;
+    text-shadow: 2px 3px 2px rgb(189, 189, 189);
+    letter-spacing: 7px;
 }
 
 .flex-container {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
 }
 
 .setting {
-  width: 230px;
-  height: 300px;
+    width: 230px;
+    height: 300px;
 }
 
 .label {
-  color: rgb(153, 153, 153);
-  font-size: 14px;
-  font-weight: normal;
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .mat-radio-button {
-  margin-top: 8px;
-  margin-bottom: 25px;
-  font-size: 11px;
-  font-weight: normal;
-  color: #757575;
+    margin-top: 8px;
+    margin-bottom: 25px;
+    font-size: 11px;
+    font-weight: normal;
+    color: #757575;
 }
 
 .mat-radio-button~.mat-radio-button {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .mat-form-field {
-  font-size: 14px;
-  margin-bottom: 17%;
+    font-size: 14px;
+    margin-bottom: 17%;
 }
 
 .mat-select {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 .flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
 }
 
 .avatar {
-  height: 135px;
-  margin: 0px 10px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3), 2px 0px 0px rgba(0, 0, 0, 0.3) inset;
+    height: 135px;
+    margin: 0px 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3), 2px 0px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 .avatar:hover {
-  filter: brightness(90%);
+    filter: brightness(90%);
 }
 
 .avatar img {
-  width: 165px;
-  height: 180px;
-  object-position: center;
-  object-fit: none;
+    width: 165px;
+    height: 180px;
+    object-position: center;
+    object-fit: none;
 }
 
 .full-avatar {
-  width: 200px;
+    width: 200px;
 }
 
 .mat-slider {
-  width: 190px;
+    width: 190px;
 }
 
 .btn-block {
-  width: 100%;
-  text-align: center;
-  margin-top: 36px;
+    width: 100%;
+    text-align: center;
+    margin-top: 36px;
 }
 
 .btn {
-  width: 215px;
-  color: #ffffff;
-  text-shadow: 3px 1px 2px rgb(0, 0, 0);
-  box-shadow: 0 1px 0 #616161 inset;
-  font-weight: bold;
-  font-size: 16px;
-  font-family: 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-  border: 1px solid #525151;
-  border-radius: 5px;
-  line-height: 2.2;
-  letter-spacing: 4px;
-  background: linear-gradient(to bottom, #b4b4b4 0, #a0a0a0 50%, #999999 51%, #4d4d4d 100%);
+    width: 215px;
+    color: #ffffff;
+    text-shadow: 3px 1px 2px rgb(0, 0, 0);
+    box-shadow: 0 1px 0 #616161 inset;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    border: 1px solid #525151;
+    border-radius: 5px;
+    line-height: 2.2;
+    letter-spacing: 4px;
+    background: linear-gradient(to bottom, #b4b4b4 0, #a0a0a0 50%, #999999 51%, #4d4d4d 100%);
 }

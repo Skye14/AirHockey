@@ -1,15 +1,15 @@
 .container {
-  display: flex;
+    display: flex;
 }
 
 .block-canvas {
-  position: relative;
-  margin: 70px auto;
+    position: relative;
+    margin: 70px auto;
 }
 
 canvas {
-  border: 8px solid black;
-  border-radius: 10px;
-  background: rgba(113, 206, 239, 1);
-  background: radial-gradient(ellipse at center, rgba(113, 206, 239, 1) 0%, rgba(113, 206, 239, 1) 34%, rgba(33, 180, 226, 1) 73%, rgba(33, 180, 226, 1) 100%);
+    border: 8px solid black;
+    border-radius: 10px;
+    background: rgba(113, 206, 239, 1);
+    background: radial-gradient(ellipse at center, rgba(113, 206, 239, 1) 0%, rgba(113, 206, 239, 1) 34%, rgba(33, 180, 226, 1) 73%, rgba(33, 180, 226, 1) 100%);
 }

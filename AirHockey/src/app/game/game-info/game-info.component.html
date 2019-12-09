@@ -1,49 +1,49 @@
 <mat-toolbar>
-  <div class="flex-container">
+    <div class="flex-container">
 
-    <div class="block-info">
-      <div class="flex-box">
-        <div class="avatar">
-          <img [src]="gameSettings.img" alt="">
-          <p class="avatar-name">{{ gameSettings.username }}</p>
+        <div class="block-info">
+            <div class="flex-box">
+                <div class="avatar">
+                    <img [src]="gameSettings.img" alt="">
+                    <p class="avatar-name">{{ gameSettings.username }}</p>
+                </div>
+                <div class="score">
+                    <p>{{ "Score.title" | translate }}</p>
+                    <div class="score-message">
+                        <p [@bounceAnimate]="animateForGateLeft ? 'start' : 'end'">{{score.leftGate}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="score">
-          <p>{{ "Score.title" | translate }}</p>
-          <div class="score-message">
-            <p [@bounceAnimate]="animateForGateLeft ? 'start' : 'end'">{{score.leftGate}}</p>
-          </div>
+
+        <div class="block-info center">
+            <div class="score-title">
+                <p>{{ "Score.FinalScore" | translate }} : <span>{{ gameSettings.maxScore }}</span></p>
+            </div>
+
+            <div class="btn-box">
+                <button mat-raised-button class="btn" (click)="onGetHome()">{{ "Button.Quit" | translate }}</button>
+                <button mat-raised-button class="btn" (click)="onStartPause()">
+                    <p *ngIf="!isPause">{{ "Button.Start" | translate }}</p>
+                    <p *ngIf="isPause">{{ "Button.Pause" | translate }}</p>
+                </button>
+                <button mat-raised-button class="btn" (click)="openHelpSheet()">{{ "Button.Help" | translate }}</button>
+            </div>
         </div>
-      </div>
+
+        <div class="block-info">
+            <div class="flex-box">
+                <div class="score">
+                    <p>{{ "Score.title" | translate }}</p>
+                    <div class="score-message">
+                        <p [@bounceAnimate]="animateForGateRight ? 'start' : 'end'">{{score.rightGate}}</p>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <img src="assets/img/2.jpg" alt="">
+                    <p class="avatar-name">{{ "BotName" | translate }}</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="block-info center">
-      <div class="score-title">
-        <p>{{ "Score.FinalScore" | translate }} : <span>{{ gameSettings.maxScore }}</span></p>
-      </div>
-
-      <div class="btn-box">
-        <button mat-raised-button class="btn" (click)="onGetHome()">{{ "Button.Quit" | translate }}</button>
-        <button mat-raised-button class="btn" (click)="onStartPause()">
-          <p *ngIf="!isPause">{{ "Button.Start" | translate }}</p>
-          <p *ngIf="isPause">{{ "Button.Pause" | translate }}</p>
-        </button>
-        <button mat-raised-button class="btn" (click)="openHelpSheet()">{{ "Button.Help" | translate }}</button>
-      </div>
-    </div>
-
-    <div class="block-info">
-      <div class="flex-box">
-        <div class="score">
-          <p>{{ "Score.title" | translate }}</p>
-          <div class="score-message">
-            <p [@bounceAnimate]="animateForGateRight ? 'start' : 'end'">{{score.rightGate}}</p>
-          </div>
-        </div>
-        <div class="avatar">
-          <img src="assets/img/2.jpg" alt="">
-          <p class="avatar-name">{{ "BotName" | translate }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </mat-toolbar>

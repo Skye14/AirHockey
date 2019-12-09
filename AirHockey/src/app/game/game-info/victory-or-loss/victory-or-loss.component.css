@@ -1,45 +1,44 @@
 .container {
-  width: 300px;
-  text-align: center;
+    width: 300px;
+    text-align: center;
 }
 
 .title {
-  margin-top: 5px;
-  margin-bottom: 24px;
-  font-size: 30px;
-  letter-spacing: 7px;
-  font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
-  text-shadow: 4px 1px 2px rgb(211, 211, 211);
-  color: rgb(56, 56, 56);
+    margin-top: 5px;
+    margin-bottom: 24px;
+    font-size: 30px;
+    letter-spacing: 7px;
+    font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+    text-shadow: 4px 1px 2px rgb(211, 211, 211);
+    color: rgb(56, 56, 56);
 }
 
 .block-close {
-  width: 100%;
-  display: flex;
-  margin-top: 24px;
-  justify-content: flex-end;
+    width: 100%;
+    display: flex;
+    margin-top: 24px;
+    justify-content: flex-end;
 }
 
 .close {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .block-close :hover {
-  background: rgb(236, 235, 235);
-  border-radius: 50%;
+    background: rgb(236, 235, 235);
+    border-radius: 50%;
 }
 
 .block-close :active {
-  background: rgb(221, 221, 221);
-  border-radius: 50%;
+    background: rgb(221, 221, 221);
+    border-radius: 50%;
 }
 
-
 .material-icons {
-  color: #f83a3a;
-  line-height: 40px;
+    color: #f83a3a;
+    line-height: 40px;
 }

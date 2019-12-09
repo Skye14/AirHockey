@@ -1,56 +1,55 @@
 .container {
-  width: 425px;
+    width: 425px;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 ul li {
-  font: 400 14px Roboto,"Helvetica Neue",sans-serif;
-  text-transform: none;
-  color: rgba(0,0,0,.87);
-  line-height: 30px;
+    font: 400 14px Roboto, "Helvetica Neue", sans-serif;
+    text-transform: none;
+    color: rgba(0, 0, 0, .87);
+    line-height: 30px;
 }
 
 li span {
-  color: black;
-  padding-left: 5px;
-  text-transform: uppercase;
-  font: bold 13px Verdana, Tahoma, sans-serif;
+    color: black;
+    padding-left: 5px;
+    text-transform: uppercase;
+    font: bold 13px Verdana, Tahoma, sans-serif;
 }
 
 hr {
-  margin-top: 14px;
+    margin-top: 14px;
 }
 
 .block-close {
-  width: 100%;
-  display: flex;
-  margin-top: 14px;
-  justify-content: flex-end;
+    width: 100%;
+    display: flex;
+    margin-top: 14px;
+    justify-content: flex-end;
 }
 
 .close {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .block-close :hover {
-  background: rgb(236, 235, 235);
-  border-radius: 50%;
+    background: rgb(236, 235, 235);
+    border-radius: 50%;
 }
 
 .block-close :active {
-  background: rgb(221, 221, 221);
-  border-radius: 50%;
+    background: rgb(221, 221, 221);
+    border-radius: 50%;
 }
 
-
 .material-icons {
-  color: #f83a3a;
-  line-height: 40px;
+    color: #f83a3a;
+    line-height: 40px;
 }
