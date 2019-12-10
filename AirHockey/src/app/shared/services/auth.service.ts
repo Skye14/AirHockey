@@ -4,7 +4,7 @@ import { GameSettingsModel } from './../models/game-settings.model';
 import { Language } from '../enums/language.enum';
 import { Difficulty } from '../enums/difficulty.enum';
 import { MaxScore } from '../enums/max-score.enum';
-import { ImgEnum } from '../enums/img-enum.enum';
+import { avatar1 } from '../const/avatar';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +14,6 @@ export class AuthService {
     private difficulty = Difficulty;
     private maxScore = MaxScore;
     private language = Language;
-    private img = ImgEnum;
     private gameSettingsModel: GameSettingsModel = null;
 
     constructor() {
@@ -27,7 +26,7 @@ export class AuthService {
         this.gameSettingsModel.language = this.language.english;
         this.gameSettingsModel.difficulty = this.difficulty.normal;
         this.gameSettingsModel.maxScore = this.maxScore.score20;
-        this.gameSettingsModel.img = this.img.img1;
+        this.gameSettingsModel.avatar = avatar1;
         return this.gameSettingsModel;
     }
 

@@ -5,7 +5,7 @@ import { Language } from '../enums/language.enum';
 export class GameSettingsModel {
     public language: Language;
     public username: string;
-    public img: string;
+    public avatar: string;
     public difficulty: Difficulty;
     public maxScore: MaxScore;
 }

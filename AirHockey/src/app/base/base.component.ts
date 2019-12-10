@@ -6,7 +6,6 @@ import { Language } from '../shared/enums/language.enum';
 import { GameSettingsModel } from '../shared/models/game-settings.model';
 import { Difficulty } from '../shared/enums/difficulty.enum';
 import { MaxScore } from './../shared/enums/max-score.enum';
-import { ImgEnum } from '../shared/enums/img-enum.enum';
 import { AuthService } from '../shared/services/auth.service';
 
 @Component({
@@ -21,7 +20,6 @@ export class BaseComponent implements OnInit, AfterContentChecked {
     public maxScore: number;
     public difficultyEnum = Difficulty;
     public maxScoreEnum = MaxScore;
-    public imgArr = Object.values(ImgEnum);
     public isCheckedBtn: boolean;
     public gameSettings = new GameSettingsModel();
 
@@ -56,8 +54,8 @@ export class BaseComponent implements OnInit, AfterContentChecked {
         this.translate.use(event.value);
     }
 
-    public onPickAvatar(img: string): void {
-        this.gameSettings.img = img;
+    public onPickAvatar(avatar: any): void {
+        this.gameSettings.avatar = avatar.target.src;
     }
 
     public onStartGame(): void {
