@@ -29,7 +29,6 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     private isPressW = false;
     private keyCode: number;
     private gameSettings: GameSettingsModel;
-    private difficulty = Difficulty;
     private gateLeft: Gate;
     private gateRight: Gate;
     private ball: Ball;
@@ -74,16 +73,16 @@ export class GameFieldComponent implements OnInit, OnDestroy {
 
     private regulateDifficultyOfGame(): void {
         switch (this.gameSettings.difficulty) {
-            case this.difficulty.easy:
+            case Difficulty.easy:
                 this.ball.speed = this.speedOfBall.easy;
                 break;
-            case this.difficulty.normal:
+            case Difficulty.normal:
                 this.ball.speed = this.speedOfBall.normal;
                 break;
-            case this.difficulty.hard:
+            case Difficulty.hard:
                 this.ball.speed = this.speedOfBall.hard;
                 break;
-            case this.difficulty.hardcore:
+            case Difficulty.hardcore:
                 this.ball.speed = this.speedOfBall.hardcore;
                 this.gateRight.speed = Gate.highSpeed;
                 this.gateLeft.step = Gate.highStep;
@@ -124,7 +123,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.moveGateDown();
         this.moveGateUp();
         this.intervalGate = setInterval(() => {
-            if (this.gameSettings.difficulty === this.difficulty.hardcore) {
+            if (this.gameSettings.difficulty === Difficulty.hardcore) {
                 this.gateRight = this.gameService.getSmartGateRight();
             } else {
                 this.gateRight = this.gameService.getPositionGateRight();

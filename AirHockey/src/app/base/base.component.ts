@@ -18,7 +18,7 @@ export class BaseComponent implements OnInit, AfterContentChecked {
     public username: string;
     public difficulty: string;
     public maxScore: number;
-    public difficultyEnum = Difficulty;
+    public difficultyEnum: typeof Difficulty = Difficulty;
     public maxScoreEnum = MaxScore;
     public isCheckedBtn: boolean;
     public gameSettings = new GameSettingsModel();
@@ -40,7 +40,7 @@ export class BaseComponent implements OnInit, AfterContentChecked {
     private setDefaultSettings(): void {
         this.username = this.gameSettings.username;
         this.maxScore = this.gameSettings.maxScore;
-        this.difficulty = this.gameSettings.difficulty;
+        this.difficulty = Difficulty[this.gameSettings.difficulty];
         if (this.gameSettings.language === this.languages.english) {
             this.isCheckedBtn = true;
         } else {
@@ -62,12 +62,8 @@ export class BaseComponent implements OnInit, AfterContentChecked {
         if (this.username) {
             this.gameSettings.username = this.username;
         }
-        if (this.difficulty) {
-            this.gameSettings.difficulty = this.difficultyEnum[this.difficulty];
-        }
-        if (this.maxScore) {
-            this.gameSettings.maxScore = this.maxScore;
-        }
+        this.gameSettings.difficulty = Difficulty[this.difficulty];
+        this.gameSettings.maxScore = this.maxScore;
         this.authService.saveAuthInfoToStore(this.gameSettings);
         this.router.navigate(['game']);
     }

@@ -22,16 +22,16 @@
             <mat-form-field>
                 <mat-label>{{ "Difficulty.label" | translate }}</mat-label>
                 <mat-select [(value)]="difficulty">
-                    <mat-option value="{{ difficultyEnum.easy }}">
+                    <mat-option value="{{ difficultyEnum[difficultyEnum.easy] }}">
                         {{ "Difficulty.Easy" | translate }}
                     </mat-option>
-                    <mat-option value="{{ difficultyEnum.normal }}">
+                    <mat-option value="{{ difficultyEnum[difficultyEnum.normal] }}">
                         {{ "Difficulty.Normal" | translate }}
                     </mat-option>
-                    <mat-option value="{{ difficultyEnum.hard }}">
+                    <mat-option value="{{ difficultyEnum[difficultyEnum.hard] }}">
                         {{ "Difficulty.Hard" | translate }}
                     </mat-option>
-                    <mat-option value="{{ difficultyEnum.hardcore }}">
+                    <mat-option value="{{ difficultyEnum[difficultyEnum.hardcore] }}">
                         {{ "Difficulty.Hardcore" | translate }}
                     </mat-option>
                 </mat-select>
