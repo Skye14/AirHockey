@@ -1,6 +1,6 @@
 export class Gate {
-    static highSpeed = 35;
-    static highStep = 15;
+    static extraSpeed = 35;
+    static extraStep = 15;
     public step = 7;
     public speed = 27;
     public width = 10;
@@ -8,7 +8,4 @@ export class Gate {
     public positionY = 150;
     public startOfGate: number;
     public endOfGate: number;
-
-    constructor() {
-    }
 }

@@ -25,7 +25,7 @@
     },
     "Button": {
         "StartGame": "Start game",
-        "Quit": "Quit",
+        "Quit": "Settings",
         "Start": "Start",
         "Pause": "Pause",
         "Help": "Help"
@@ -39,7 +39,7 @@
         "KeyPress": "key press",
         "StartPauseMessage": "To start the game or pause, click on the",
         "StartPause": "start / pause",
-        "SpaceMessage": "button or click key",
+        "SpaceMessage": "button or press key",
         "keySpace": "space",
         "KeyW": "W",
         "KeyS": "S",

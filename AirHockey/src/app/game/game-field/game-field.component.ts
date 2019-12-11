@@ -84,8 +84,8 @@ export class GameFieldComponent implements OnInit, OnDestroy {
                 break;
             case Difficulty.hardcore:
                 this.ball.speed = this.speedOfBall.hardcore;
-                this.gateRight.speed = Gate.highSpeed;
-                this.gateLeft.step = Gate.highStep;
+                this.gateRight.speed = Gate.extraSpeed;
+                this.gateLeft.step = Gate.extraStep;
                 break;
         }
     }

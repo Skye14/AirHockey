@@ -11,9 +11,6 @@ import { avatar1 } from '../const/avatar';
 })
 export class AuthService {
     private key = 'AirHocheyUserSettings';
-    private difficulty = Difficulty;
-    private maxScore = MaxScore;
-    private language = Language;
     private gameSettingsModel: GameSettingsModel = null;
 
     constructor() {
@@ -23,9 +20,9 @@ export class AuthService {
     private setDefaultGameSettings(): GameSettingsModel {
         this.gameSettingsModel = new GameSettingsModel();
         this.gameSettingsModel.username = 'Gamer';
-        this.gameSettingsModel.language = this.language.english;
-        this.gameSettingsModel.difficulty = this.difficulty.normal;
-        this.gameSettingsModel.maxScore = this.maxScore.score20;
+        this.gameSettingsModel.language = Language.english;
+        this.gameSettingsModel.difficulty = Difficulty.normal;
+        this.gameSettingsModel.maxScore = MaxScore.score20;
         this.gameSettingsModel.avatar = avatar1;
         return this.gameSettingsModel;
     }

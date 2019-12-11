@@ -1,5 +1,4 @@
 footer {
-    position: fixed;
     width: 100%;
     bottom: 1%;
 }
@@ -12,21 +11,13 @@ footer {
 
 .title {
     margin: 0 10px;
-    font-family: Verdana, Tahoma, sans-serif;
-    font-size: 12px;
-    text-transform: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    letter-spacing: 1px;
     color: rgb(61, 61, 61);
     line-height: 21px;
 }
 
 span {
-    padding-right: 7px;
-}
-
-a {
-    fill: #bbbbbb;
-}
-
-a :hover {
-    fill: #575757;
+    padding-right: 5px;
 }

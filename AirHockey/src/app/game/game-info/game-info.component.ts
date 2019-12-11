@@ -32,6 +32,7 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     private interval;
     private keyCodeSpace = 32;
     private isPopupHelpOpen = false;
+    private isVictoryOrLossPopup = false;
     private subscription: Subscription;
     public isPause = false;
     public gameSettings: GameSettingsModel;
@@ -81,8 +82,11 @@ export class GameInfoComponent implements OnInit, OnDestroy {
             this.gameService.isVictory = true;
             popup = this.popup.open(VictoryOrLossComponent);
         }
+        this.isVictoryOrLossPopup = !this.isVictoryOrLossPopup;
+
         popup.afterClosed().subscribe(() => {
             this.score = this.gameService.getScore(this.gameSettings.maxScore);
+            this.isVictoryOrLossPopup = !this.isVictoryOrLossPopup;
             this.checkGameScore();
         });
     }
@@ -116,7 +120,7 @@ export class GameInfoComponent implements OnInit, OnDestroy {
 
     private eventHandlerStartOrPause(): void {
         this.subscription = fromEvent(document, 'keydown').subscribe((event: any) => {
-            if (event.keyCode === this.keyCodeSpace && !this.isPopupHelpOpen) {
+            if (event.keyCode === this.keyCodeSpace && !this.isPopupHelpOpen && !this.isVictoryOrLossPopup) {
                 this.startGame = true;
                 this.isPause = !this.isPause;
                 this.gameService.pauseGame(this.startGame, this.isPause);
