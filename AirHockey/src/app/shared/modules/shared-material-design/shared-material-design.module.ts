@@ -12,6 +12,7 @@ import { MatRadioModule } from '@angular/material';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatRadioModule,
         MatSliderModule,
         MatDialogModule,
-        MatIconModule
+        MatIconModule,
+        MatCheckboxModule
     ],
     exports: [
         MatToolbarModule,
@@ -39,7 +41,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatRadioModule,
         MatSliderModule,
         MatDialogModule,
-        MatIconModule
+        MatIconModule,
+        MatCheckboxModule
     ]
 })
 export class SharedMaterialDesignModule { }

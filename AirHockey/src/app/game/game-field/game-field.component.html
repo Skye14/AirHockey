@@ -1,4 +1,16 @@
 <div class="container">
+    <section class="section">
+        <div class="block-radio-button">
+            <div class="margin">
+                <label class="label">Field sizes:</label>
+                <mat-radio-group color="primary">
+                    <mat-radio-button class="radio-button" value="small">small</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="medium">medium</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="large">large</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </section>
     <div class="block-canvas">
         <canvas #canvas width="{{field.width}}" height="{{field.height}}">
             {{ "Canvas.message" | translate }}
