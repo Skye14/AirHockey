@@ -10,6 +10,7 @@ import { GameSettingsModel } from 'src/app/shared/models/game-settings.model';
 import { AuthService } from './../../shared/services/auth.service';
 import { Difficulty } from './../../shared/enums/difficulty.enum';
 import { SpeedOfBallEnum } from './enums/speed-of-ball-enum.enum';
+import { FieldSizesEnum } from './enums/field-sizes-enum.enum';
 
 @Component({
     selector: 'app-game-field',
@@ -34,6 +35,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     private ball: Ball;
     private speedOfBall = SpeedOfBallEnum;
     public field: Field;
+    public fieldSizesEnum: typeof FieldSizesEnum = FieldSizesEnum;
 
     constructor(private gameService: GameService, private authService: AuthService) {
         this.field = this.gameService.createField();
@@ -69,6 +71,11 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.contextCanvas.arc(this.ball.positionX, this.ball.positionY, this.ball.width, 0, 2 * Math.PI, true);
         this.contextCanvas.fill();
         this.contextCanvas.closePath();
+    }
+
+    public getFieldSize(event: any): void {
+       this.gameSettings.fieldSize = event.value;
+       this.authService.saveAuthInfoToStore(this.gameSettings);
     }
 
     private regulateDifficultyOfGame(): void {

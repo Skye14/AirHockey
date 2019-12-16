@@ -54,5 +54,11 @@
         "Created": "Created by",
         "DeveloperName": "Inessa Parkhimovich",
         "ContactInfo": "Contact information"
+    },
+    "FieldSizes": {
+        "label": "Field sizes",
+        "small": "small",
+        "medium": "medium",
+        "large": "large"
     }
 }

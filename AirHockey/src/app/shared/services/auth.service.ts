@@ -5,6 +5,7 @@ import { Language } from '../enums/language.enum';
 import { Difficulty } from '../enums/difficulty.enum';
 import { MaxScore } from '../enums/max-score.enum';
 import { avatar1 } from '../const/avatar';
+import { FieldSizesEnum } from './../../game/game-field/enums/field-sizes-enum.enum';
 
 @Injectable({
     providedIn: 'root'
@@ -24,6 +25,7 @@ export class AuthService {
         this.gameSettingsModel.difficulty = Difficulty.normal;
         this.gameSettingsModel.maxScore = MaxScore.score20;
         this.gameSettingsModel.avatar = avatar1;
+        this.gameSettingsModel.fieldSize = FieldSizesEnum.small;
         return this.gameSettingsModel;
     }
 
