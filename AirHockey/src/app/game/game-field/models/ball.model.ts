@@ -4,13 +4,15 @@ export class Ball {
     public stepX: number;
     public stepY: number;
     public speed: number;
-    public width = 12;
-    public height = 12;
+    public width: number;
+    public height: number;
     public rightAngle = -2;
     public acuteAngle = 0.5;
     public angleOf45Degrees = 1;
 
-    constructor() {
+    constructor(height: number) {
+        this.height = height;
+        this.width = height;
     }
 
     public setStep(): void {
@@ -21,10 +23,5 @@ export class Ball {
     public changeStep(): void {
         this.stepX = this.stepX < 0 ? Math.abs(this.stepX) : -this.stepX;
         this.stepY = this.stepY < 0 ? Math.abs(this.stepY) : -this.stepY;
-    }
-
-    public setStartPosition(): void {
-        this.positionX = 334;
-        this.positionY = 194;
     }
 }

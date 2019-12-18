@@ -21,7 +21,7 @@ export class BaseComponent implements OnInit, AfterContentChecked {
     public difficultyEnum: typeof Difficulty = Difficulty;
     public maxScoreEnum: typeof MaxScore = MaxScore;
     public isCheckedBtn: boolean;
-    public gameSettings = new GameSettingsModel();
+    public gameSettings: GameSettingsModel;
 
     constructor(private translate: TranslateService,
                 private router: Router, private authService: AuthService,

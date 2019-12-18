@@ -1,4 +1,9 @@
 export class Field {
-    public width = 700;
-    public height = 400;
+    public width: number;
+    public height: number;
+
+    constructor(width: number, height: number) {
+        this.width = width;
+        this.height = height;
+    }
 }

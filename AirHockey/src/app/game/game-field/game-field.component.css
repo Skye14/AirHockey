@@ -1,7 +1,7 @@
 .container {
     display: flex;
     width: 100%;
-    min-height: 600px;
+    height: 800px;
     background-image: url('../../../assets/image/background/hockey.jpg');
     background-size: 100% 100%;
 }
@@ -22,7 +22,7 @@
 
 .margin {
     width: 550px;
-    margin: 0px auto;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -38,7 +38,7 @@ label {
 
 .block-canvas {
     position: relative;
-    margin: 75px auto;
+    margin: 100px auto;
 }
 
 canvas {

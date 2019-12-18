@@ -5,6 +5,7 @@ import { Field } from '../game-field/models/field.model';
 import { Ball } from '../game-field/models/ball.model';
 import { GateDirectionEnum } from '../game-field/enums/gate-direction-enum.enum';
 import { Score } from '../game-info/models/score.model';
+import { GameFactory } from './../game-field/game-factory/game-factory';
 
 @Injectable({
     providedIn: 'root'
@@ -18,6 +19,7 @@ export class GameService {
     private startGame = false;
     private isPause = false;
     private score = new Score();
+    private gameFactory = new GameFactory();
     public isVictory = false;
 
     constructor() {
@@ -28,27 +30,30 @@ export class GameService {
         this.startGame = startGame;
     }
 
-    public createField(): Field {
-        return this.field = new Field();
+    public createField(fieldSize: number): Field {
+        this.field = this.gameFactory.createField(fieldSize);
+        return this.field;
     }
 
     public createGateLeft(): Gate {
-        return this.gateLeft = new Gate();
+        this.gateLeft = this.gameFactory.createGate();
+        return this.gateLeft;
     }
 
     public createGateRight(): Gate {
-        return this.gateRight = new Gate();
+        this.gateRight = this.gameFactory.createGate();
+        return this.gateRight;
     }
 
     public createBall(): Ball {
-        this.ball = new Ball();
-        this.ball.setStartPosition();
+        this.ball = this.gameFactory.createBall();
         this.ball.setStep();
         return this.ball;
     }
 
     private restartPositionOfBall(): void {
-        this.ball.setStartPosition();
+        this.ball.positionY = (this.field.height / 2) - (this.ball.height / 2);
+        this.ball.positionX = (this.field.width / 2) - (this.ball.width / 2);
         this.ball.changeStep();
     }
 
@@ -220,8 +225,8 @@ export class GameService {
 
     public endGame(): void {
         this.score = new Score();
-        this.gateLeft.positionY = new Gate().positionY;
-        this.gateRight.positionY = new Gate().positionY;
+        this.gateLeft.positionY = (this.field.height - this.gateLeft.height) / 2;
+        this.gateRight.positionY = (this.field.height - this.gateRight.height) / 2;
     }
 
 }
