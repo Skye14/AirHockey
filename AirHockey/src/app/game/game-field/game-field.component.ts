@@ -34,7 +34,6 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     private gateRight: Gate;
     private ball: Ball;
     private speedOfBall = SpeedOfBallEnum;
-    private isResizeField = false;
     public field: Field;
     public fieldSizesEnum: typeof FieldSizesEnum = FieldSizesEnum;
 
@@ -82,11 +81,6 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.gateLeft = this.gameService.createGateLeft();
         this.gateRight = this.gameService.createGateRight();
         this.ball = this.gameService.createBall();
-        this.isResizeField = true;
-    }
-
-    public resizeField(): boolean {
-        return this.isResizeField;
     }
 
     private regulateDifficultyOfGame(): void {
@@ -112,7 +106,6 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.intervalBall = setInterval(() => {
             this.ball = this.gameService.moveBall();
             this.draw();
-            this.isResizeField = false;
         }, this.ball.speed);
     }
 
