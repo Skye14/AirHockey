@@ -6,9 +6,6 @@ export class Ball {
     public speed: number;
     public width: number;
     public height: number;
-    public rightAngle = -2;
-    public acuteAngle = 0.5;
-    public angleOf45Degrees = 1;
 
     constructor(height: number) {
         this.height = height;
@@ -17,7 +14,7 @@ export class Ball {
 
     public setStep(): void {
         this.stepX = -2;
-        this.stepY = 2;
+        this.stepY = 0;
     }
 
     public changeStep(): void {

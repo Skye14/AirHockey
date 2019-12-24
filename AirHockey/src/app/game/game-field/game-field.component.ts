@@ -48,6 +48,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.contextCanvas = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
         this.regulateDifficultyOfGame();
+        this.setSpeedOfBallForBigField();
         this.moveBall();
         this.changePositionOfGates();
 
@@ -99,6 +100,16 @@ export class GameFieldComponent implements OnInit, OnDestroy {
                 this.gateRight.speed = Gate.extraSpeed;
                 this.gateLeft.step = Gate.extraStep;
                 break;
+        }
+    }
+
+    private setSpeedOfBallForBigField(): void {
+        if (this.gameSettings.fieldSize === this.fieldSizesEnum.large) {
+            if (this.gameSettings.difficulty === Difficulty.hard) {
+                this.ball.speed = this.speedOfBall.hardSpeedForBigField;
+            } else if (this.gameSettings.difficulty === Difficulty.hardcore) {
+                this.ball.speed = this.speedOfBall.hardcoreSpeedForBigField;
+            }
         }
     }
 

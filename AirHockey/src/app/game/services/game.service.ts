@@ -78,100 +78,125 @@ export class GameService {
     public moveBall(): Ball {
         const posX = this.ball.positionX;
         const posY = this.ball.positionY;
+        const lowerGateLeftPosY = this.gateLeft.positionY + this.gateLeft.height;
+        const lowerGateRightPosY = this.gateRight.positionY + this.gateRight.height;
+        const lowerBallPosY = this.ball.positionY + this.ball.height / 2;
+        const topBallPosY = this.ball.positionY - this.ball.height;
+        this.ball.positionY = this.ball.positionY;
 
         if (this.startGame && this.isPause) {
             this.ball.positionX += this.ball.stepX;
             this.ball.positionY += this.ball.stepY;
             if (this.ball.positionY >= (this.field.height - this.ball.width)) {
-                this.ball.positionY += this.ball.stepY;
-                this.ball.positionY = posY;
-                this.ball.stepY = -this.ball.stepY;
+                this.increasePositionYOfBall(posY);
             } else if ((this.ball.positionY - this.ball.width) <= 0) {
-                this.ball.positionY -= this.ball.stepY;
-                this.ball.positionY = posY;
-                this.ball.stepY = -this.ball.stepY;
+                this.reducePositionYOfBall(posY);
+            } else if (this.ball.positionX <= 0) {
+                this.score.rightGate++;
+                this.restartPositionOfBall();
             } else if (this.ball.positionX - this.ball.width <= this.gateLeft.width) {
-                this.changeAngleOfBall(posX, this.gateLeft);
-            } else if (this.ball.positionX + this.ball.width > (this.field.width - this.gateRight.width)) {
-                this.changeAngleOfBall(posX, this.gateRight);
+                if (lowerBallPosY >= Math.ceil(this.gateLeft.positionY) && topBallPosY <= lowerGateLeftPosY) {
+                    this.changeAngleOfBallForGate(this.gateLeft);
+                    this.increasePositionXOfBall(posX);
+                }
+            } else if (this.ball.positionX >= this.field.width) {
+                this.score.leftGate++;
+                this.restartPositionOfBall();
+            } else if (this.ball.positionX + this.ball.width >= this.field.width - this.gateRight.width) {
+                if (lowerBallPosY >= Math.ceil(this.gateRight.positionY) && topBallPosY <= lowerGateRightPosY) {
+                    this.changeAngleOfBallForGate(this.gateRight);
+                    this.reducePositionXOfBall(posX);
+                }
             }
         }
         return this.ball;
     }
 
-    private changeAngleOfBall(posX: number, gate: Gate): void {
-        const ballCenterPosY = this.ball.positionY - this.ball.height / 2;
-        gate.startOfGate = gate.positionY - this.ball.height;
-        gate.endOfGate = gate.positionY + gate.height;
-        const partOfGate = (gate.endOfGate - gate.startOfGate) / 5;
-        const gatePart1 = gate.startOfGate + partOfGate;
-        const gatePart2 = gatePart1 + partOfGate;
-        const gatePart3 = gatePart2 + partOfGate;
-        const gatePart4 = gatePart3 + partOfGate;
+    private changeAngleOfBallForGate(gate: Gate): void {
+        this.ball.positionY = Math.ceil(this.ball.positionY);
+        const lowerGatePosY = Math.ceil(gate.positionY + gate.height);
+        const gateCenter = Math.ceil(lowerGatePosY - (gate.height / 2));
+        const angle = 2 / (gate.height / 2);
 
-        if (this.ball.positionY > gate.startOfGate && (this.ball.positionY - this.ball.width) < gate.endOfGate) {
-            if (this.ball.positionX - this.ball.width <= gate.width) {
-                this.increasePositionXOfBall(posX);
-            } else if (this.ball.positionX + (this.ball.width / 2) >= (this.field.width - gate.width)) {
-                this.reducePositionXOfBall(posX);
-            }
-            if (ballCenterPosY > gate.startOfGate && ballCenterPosY < gatePart1) {
-                this.ball.stepY = -this.ball.acuteAngle;
-                this.ball.stepX = this.getCurrentStepXOfBall(this.ball.angleOf45Degrees);
-            } else if (ballCenterPosY > gatePart1 && ballCenterPosY < gatePart2) {
-                this.ball.stepY = -this.ball.angleOf45Degrees;
-                this.ball.stepX = this.getCurrentStepXOfBall(this.ball.acuteAngle);
-            } else if (ballCenterPosY > gatePart2 && ballCenterPosY < gatePart3) {
-                if (this.ball.positionX < this.field.width / 2) {
-                    this.ball.stepY = Math.abs(this.ball.rightAngle);
-                    this.ball.stepX = Math.abs(this.ball.rightAngle);
-                } else {
-                    this.ball.stepY = Math.abs(this.ball.rightAngle);
-                    this.ball.stepX = -this.ball.rightAngle;
+        for (let x = Math.ceil(gate.positionY); x <= lowerGatePosY; x++) {
+            if (this.ball.positionY < gateCenter) {
+                let alteredAngle = 2;
+                for (let y = Math.ceil(gate.positionY); y < gateCenter; y++) {
+                    alteredAngle -= angle;
+                    if (this.ball.positionY === y) {
+                        this.changeOfDirectionInStepY(alteredAngle);
+                    }
                 }
-            } else if (ballCenterPosY > gatePart3 && ballCenterPosY < gatePart4) {
-                this.ball.stepY = this.ball.angleOf45Degrees;
-                this.ball.stepX = this.getCurrentStepXOfBall(this.ball.acuteAngle);
-            } else if (this.ball.positionY - this.ball.height / 2 > gatePart4) {
-                this.ball.stepY = this.ball.acuteAngle;
-                this.ball.stepX = this.getCurrentStepXOfBall(this.ball.angleOf45Degrees);
+                break;
+            } else if (this.ball.positionY === gateCenter) {
+                this.ball.stepY = 0;
+                break;
+            } else if (this.ball.positionY > gateCenter) {
+                let alteredAngle = 0;
+                for (let i = gateCenter; i < lowerGatePosY; i++) {
+                    alteredAngle -= angle;
+                    if (this.ball.positionY === i) {
+                        this.changeOfDirectionInStepY(alteredAngle);
+                    }
+                }
+                break;
             }
-        } else if ((this.ball.positionX - this.ball.width) < 0) {
-            this.score.rightGate++;
-            this.restartPositionOfBall();
-        } else if ((this.ball.positionX + this.ball.width / 2) > this.field.width) {
-            this.score.leftGate++;
-            this.ball.positionX = this.field.width;
-            this.restartPositionOfBall();
+        }
+        if (this.ball.positionY <= gate.positionY) {
+            this.ball.stepY = -2;
+        }
+        if (this.ball.positionY >= lowerGatePosY) {
+            this.ball.stepY = 2;
         }
     }
 
-
-
-    private getCurrentStepXOfBall(extraStep: number): number {
-        let stepX: number;
-        if (this.ball.stepX > 0) {
-            stepX = Math.abs(this.ball.rightAngle) + extraStep;
+    private changeOfDirectionInStepY(angle: number): void {
+        if (this.ball.stepY > 0 && angle < 0) {
+            this.ball.stepY = Math.abs(angle);
+        } else if (this.ball.stepY < 0 && angle > 0) {
+            this.ball.stepY = -angle;
         } else {
-            stepX = this.ball.rightAngle - extraStep;
+            this.ball.stepY = angle;
         }
-        return stepX;
     }
 
     private reducePositionXOfBall(posX: number): void {
+        if (Math.abs(this.ball.stepY) < 1.2) {
+            this.ball.stepX = 2.5;
+        } else {
+            this.ball.stepX = 2;
+        }
         this.ball.positionX -= this.ball.stepX;
         this.ball.positionX = posX;
         this.ball.stepX = -this.ball.stepX;
     }
 
+    private reducePositionYOfBall(posY: number): void {
+        this.ball.positionY -= this.ball.stepY;
+        this.ball.positionY = posY;
+        this.ball.stepY = -this.ball.stepY;
+    }
+
     private increasePositionXOfBall(posX: number): void {
+        if (Math.abs(this.ball.stepY) < 1.2) {
+            this.ball.stepX = -2.5;
+        } else {
+            this.ball.stepX = -2;
+        }
         this.ball.positionX += this.ball.stepX;
         this.ball.positionX = posX;
         this.ball.stepX = -this.ball.stepX;
     }
 
+    private increasePositionYOfBall(posY: number): void {
+        this.ball.positionY += this.ball.stepY;
+        this.ball.positionY = posY;
+        this.ball.stepY = -this.ball.stepY;
+    }
+
     public getPositionGateRight(): Gate {
         const gateLength = this.gateRight.positionY + this.gateRight.height;
+
         if (this.startGame && this.isPause && this.ball.stepX === Math.abs(this.ball.stepX)) {
             if (this.ball.positionX > this.field.width / 2) {
                 if (this.ball.positionY <= this.gateRight.positionY) {
@@ -192,6 +217,7 @@ export class GameService {
     public getSmartGateRight(): Gate {
         const gateLength = this.gateRight.positionY + this.gateRight.height;
         const centralPositionOfGate = (this.field.height - this.gateRight.height) / 2;
+
         if (this.startGame && this.isPause && this.ball.stepX === Math.abs(this.ball.stepX)) {
             if (this.ball.positionX > this.field.width / 2) {
                 if (this.ball.positionY <= this.gateRight.positionY) {

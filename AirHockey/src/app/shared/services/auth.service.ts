@@ -16,7 +16,6 @@ export class AuthService {
 
     constructor() {
         this.gameSettingsModel = JSON.parse(localStorage.getItem(this.key));
-        localStorage.removeItem(this.key);
     }
 
     private setDefaultGameSettings(): GameSettingsModel {

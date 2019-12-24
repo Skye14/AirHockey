@@ -21,14 +21,20 @@ export class GameFactory implements IgameFactory {
     }
 
     public createGate(): Gate {
-        const gateHeight = this.field.height / 4;
+        const gateHeight = Math.round(this.field.height / 4);
         this.gate = new Gate(gateHeight);
+        if (this.field.width === largeFieldSize.width) {
+            this.gate.width = 13;
+        }
         this.gate.positionY = (this.field.height - this.gate.height) / 2;
         return this.gate;
     }
 
     public createBall(): Ball {
-        const ballHeight = this.gate.height / 8;
+        let ballHeight = this.gate.height / 8;
+        if (this.field.width === largeFieldSize.width) {
+            ballHeight = this.gate.height / 9;
+        }
         const ball = new Ball(ballHeight);
         ball.positionY = (this.field.height / 2) - (ball.height / 2);
         ball.positionX = (this.field.width / 2) - (ball.width / 2);

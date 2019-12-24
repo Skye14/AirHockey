@@ -5,6 +5,7 @@
 }
 
 body {
+    height: 100vh;
     background-color: #F5F5F5;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
