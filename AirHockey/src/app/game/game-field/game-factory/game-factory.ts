@@ -24,7 +24,7 @@ export class GameFactory implements IgameFactory {
         const gateHeight = Math.round(this.field.height / 4);
         this.gate = new Gate(gateHeight);
         if (this.field.width === largeFieldSize.width) {
-            this.gate.width = 13;
+            this.gate.width = 14;
         }
         this.gate.positionY = (this.field.height - this.gate.height) / 2;
         return this.gate;

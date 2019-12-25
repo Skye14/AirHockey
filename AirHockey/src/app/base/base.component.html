@@ -41,10 +41,18 @@
             <mat-slider thumbLabel step="5" min="{{ maxScoreEnum.score10 }}" max="{{ maxScoreEnum.score30 }}" [(ngModel)]="maxScore" value="maxScore"></mat-slider>
         </div>
         <div class="flex-wrap">
-            <div class="avatar" (click)="onPickAvatar($event)"><img src="assets/image/avatar/avatar_1.jpg" alt="avatar1"></div>
-            <div class="avatar" (click)="onPickAvatar($event)"><img src="assets/image/avatar/avatar_2.jpg" alt="avatar2"></div>
-            <div class="avatar" (click)="onPickAvatar($event)"><img src="assets/image/avatar/avatar_3.jpg" alt="avatar3"></div>
-            <div class="avatar" (click)="onPickAvatar($event)"><img src="assets/image/avatar/avatar_4.jpg" alt="avatar4"></div>
+            <div class="avatar" (click)="onPickAvatar($event)">
+                <img src="assets/image/avatar/avatar_1.jpg" alt="avatar1">
+            </div>
+            <div class="avatar" (click)="onPickAvatar($event)">
+                <img src="assets/image/avatar/avatar_2.jpg" alt="avatar2">
+            </div>
+            <div class="avatar" (click)="onPickAvatar($event)">
+                <img src="assets/image/avatar/avatar_3.jpg" alt="avatar3">
+            </div>
+            <div class="avatar" (click)="onPickAvatar($event)">
+                <img src="assets/image/avatar/avatar_4.jpg" alt="avatar4">
+            </div>
         </div>
         <div class="full-avatar" *ngIf="gameSettings.avatar">
             <img [src]="gameSettings.avatar" alt="avatar">

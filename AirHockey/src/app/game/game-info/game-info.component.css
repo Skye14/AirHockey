@@ -1,10 +1,11 @@
 .mat-toolbar {
     height: 130px;
-    background: rgb(1, 9, 46);
+    background: linear-gradient(to bottom, #0388d4 51%, #0374b6 100%);
+    box-shadow: 0 6px 20px -8px #025180;
     text-align: center;
-    color: #F5F5F5;
+    color: rgb(255, 255, 255);
     font-family: 'Times New Roman', Times, serif;
-    text-shadow: 3px 1px 2px rgb(0, 0, 0);
+    text-shadow: 3px 1px 2px rgb(3, 15, 83);
     box-shadow: 0 6px 20px -8px rgb(151, 151, 151);
 }
 
@@ -18,8 +19,8 @@
 .block-info {
     width: 22%;
     height: 110px;
-    background: rgb(1, 9, 46);
-    box-shadow: 0px 0 35px 1px rgb(14, 33, 121);
+    box-shadow: 0px 0 35px 1px #42abe7;
+    background: linear-gradient(to bottom, #0577b9 0, #038bda 50%, #038bda 51%, #056ca8 100%);
     border-radius: 23%;
     margin-bottom: 4px;
 }
@@ -27,6 +28,7 @@
 .center {
     width: 55%;
     border-radius: 21%;
+    background: linear-gradient(to bottom, #0577b9 0, #038bda 50%, #038bda 51%, #056ca8 100%);
 }
 
 .score-title {
@@ -42,7 +44,7 @@
     width: 130px;
     height: 35px;
     margin-top: 15px;
-    border: 1px solid rgb(34, 34, 34);
+    border: 1px solid #c48810;
     border-radius: 5px;
     display: block;
     font-size: 14px;
@@ -52,7 +54,6 @@
     color: #000;
     background: linear-gradient(to bottom, #fac826 0, #ecc557 47%, #ebc868 50%, #ebc868 50%, #e1b02a 51%, #c4932e 100%);
     text-shadow: 0 1px 0 #fff000;
-    box-shadow: 0 1px 0 #3b3a3b;
 }
 
 .flex-box {
@@ -85,7 +86,7 @@
     height: 30px;
     border-radius: 5px;
     font-weight: bold;
-    text-shadow: 2px 1px 1px rgb(0, 0, 0);
-    background: #747474;
-    box-shadow: 2px 2px 0 rgb(63, 63, 63) inset, -2px -2px 0 rgb(53, 53, 53) inset;
+    text-shadow: 2px 1px 1px rgb(3, 15, 83);
+    background: #66a1c4;
+    box-shadow: 2px 2px 0 #0e4b6e inset, -2px -2px 0 #0a3955 inset;
 }

@@ -3,7 +3,7 @@ export class Gate {
     static extraStep = 15;
     public step = 8;
     public speed = 27;
-    public width = 10;
+    public width = 12;
     public height: number;
     public positionY: number;
 

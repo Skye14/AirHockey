@@ -1,7 +1,7 @@
 .mat-toolbar {
     text-align: center;
-    box-shadow: 0 6px 20px -8px rgb(151, 151, 151);
-    background: linear-gradient(to bottom, #5a5a5a 51%, #333333 100%);
+    box-shadow: 0 6px 20px -8px #025180;
+    background: linear-gradient(to bottom, #0388d4 51%, #0374b6 100%);
 }
 
 .logo {
@@ -10,7 +10,7 @@
     color: #F5F5F5;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    text-shadow: 4px 2px 3px rgb(0, 0, 0);
+    text-shadow: 4px 2px 3px rgb(0, 31, 133);
     letter-spacing: 3px;
 }
 
@@ -18,6 +18,7 @@
     width: 75%;
     margin: 3% auto;
     height: 500px;
+    background: #fefeff;
 }
 
 h2 {
@@ -108,14 +109,14 @@ h2 {
     width: 215px;
     color: #ffffff;
     text-shadow: 3px 1px 2px rgb(0, 0, 0);
-    box-shadow: 0 1px 0 #616161 inset;
+    box-shadow: 0 1px 0 #015586 inset;
     font-weight: bold;
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    border: 1px solid #525151;
+    border: 1px solid #0372b3;
     border-radius: 5px;
     line-height: 2.2;
     letter-spacing: 4px;
-    background: linear-gradient(to bottom, #b4b4b4 0, #a0a0a0 50%, #999999 51%, #4d4d4d 100%);
+    background: linear-gradient(to bottom, #0593e6 0, #0488d4 50%, #0487d3 51%, #046ca8 100%);
 }

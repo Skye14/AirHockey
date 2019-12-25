@@ -5,11 +5,15 @@
 }
 
 body {
-    height: 100vh;
-    background-color: #F5F5F5;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     text-transform: uppercase;
+    height: 100%;
+    background-image: url('./assets/image/background/snow.jpg');
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
 }
 
 .mat-radio-button .mat-radio-outer-circle {
