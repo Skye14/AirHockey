@@ -82,7 +82,6 @@ export class GameService {
         const lowerGateRightPosY = this.gateRight.positionY + this.gateRight.height;
         const lowerBallPosY = this.ball.positionY + this.ball.height / 2;
         const topBallPosY = this.ball.positionY - this.ball.height;
-        this.ball.positionY = this.ball.positionY;
 
         if (this.startGame && this.isPause) {
             this.ball.positionX += this.ball.stepX;
@@ -95,17 +94,27 @@ export class GameService {
                 this.score.rightGate++;
                 this.restartPositionOfBall();
             } else if (this.ball.positionX - this.ball.width <= this.gateLeft.width) {
-                if (lowerBallPosY >= Math.ceil(this.gateLeft.positionY) && topBallPosY <= lowerGateLeftPosY) {
-                    this.changeAngleOfBallForGate(this.gateLeft);
-                    this.increasePositionXOfBall(posX);
+                if (lowerBallPosY > Math.ceil(this.gateLeft.positionY) && topBallPosY < lowerGateLeftPosY) {
+                    if (this.ball.positionX - this.ball.width / 2 < this.gateLeft.width) {
+                        this.score.rightGate++;
+                        this.restartPositionOfBall();
+                    } else {
+                        this.increasePositionXOfBall(posX);
+                        this.changeAngleOfBallForGate(this.gateLeft);
+                    }
                 }
             } else if (this.ball.positionX >= this.field.width) {
                 this.score.leftGate++;
                 this.restartPositionOfBall();
             } else if (this.ball.positionX + this.ball.width >= this.field.width - this.gateRight.width) {
-                if (lowerBallPosY >= Math.ceil(this.gateRight.positionY) && topBallPosY <= lowerGateRightPosY) {
-                    this.changeAngleOfBallForGate(this.gateRight);
-                    this.reducePositionXOfBall(posX);
+                if (lowerBallPosY > Math.ceil(this.gateRight.positionY) && topBallPosY < lowerGateRightPosY) {
+                    if (this.ball.positionX + this.ball.width / 2 < this.gateLeft.width) {
+                        this.score.leftGate++;
+                        this.restartPositionOfBall();
+                    } else {
+                        this.changeAngleOfBallForGate(this.gateRight);
+                        this.reducePositionXOfBall(posX);
+                    }
                 }
             }
         }

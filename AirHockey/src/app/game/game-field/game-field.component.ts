@@ -29,11 +29,11 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     private gateDirection = GateDirectionEnum;
     private isPressW = false;
     private keyCode: number;
-    private gameSettings: GameSettingsModel;
     private gateLeft: Gate;
     private gateRight: Gate;
     private ball: Ball;
     private speedOfBall = SpeedOfBallEnum;
+    public gameSettings: GameSettingsModel;
     public field: Field;
     public fieldSizesEnum: typeof FieldSizesEnum = FieldSizesEnum;
 
