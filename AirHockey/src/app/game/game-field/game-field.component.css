@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    min-height: 780px;
 }
 
 .section {
@@ -45,4 +46,10 @@ canvas {
     border-radius: 10px;
     background: #0388d4;
     background: radial-gradient(ellipse at center, rgb(118, 203, 235) 0%, rgb(118, 203, 235) 34%, rgba(33, 180, 226, 1) 73%, rgba(33, 180, 226, 1) 100%);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    bottom: 1%;
 }
