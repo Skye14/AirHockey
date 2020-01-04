@@ -16,11 +16,11 @@ export class GameService {
     private field: Field;
     private ball: Ball;
     private gateDirection = GateDirectionEnum;
-    private startGame = false;
-    private isPause = false;
     private score = new Score();
     private gameFactory = new GameFactory();
     public isVictory = false;
+    public startGame = false;
+    public isPause = false;
 
     constructor() {
     }

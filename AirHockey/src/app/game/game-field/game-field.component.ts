@@ -146,16 +146,18 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.moveGateDown();
         this.moveGateUp();
         this.intervalGate = setInterval(() => {
-            if (this.gameSettings.difficulty === Difficulty.hardcore) {
-                this.gateRight = this.gameService.getSmartGateRight();
-            } else {
-                this.gateRight = this.gameService.getPositionGateRight();
-            }
-            if (this.isPressW) {
-                if (this.keyCode === this.keyCodeDown) {
-                    this.gateLeft.positionY = this.gameService.getPositionGateLeft(this.gateDirection.keyDown);
-                } else if (this.keyCode === this.keyCodeUp) {
-                    this.gateLeft.positionY = this.gameService.getPositionGateLeft(this.gateDirection.keyUp);
+            if (this.gameService.startGame && this.gameService.isPause) {
+                if (this.gameSettings.difficulty === Difficulty.hardcore) {
+                    this.gateRight = this.gameService.getSmartGateRight();
+                } else {
+                    this.gateRight = this.gameService.getPositionGateRight();
+                }
+                if (this.isPressW) {
+                    if (this.keyCode === this.keyCodeDown) {
+                        this.gateLeft.positionY = this.gameService.getPositionGateLeft(this.gateDirection.keyDown);
+                    } else if (this.keyCode === this.keyCodeUp) {
+                        this.gateLeft.positionY = this.gameService.getPositionGateLeft(this.gateDirection.keyUp);
+                    }
                 }
             }
         }, this.gateLeft.speed);
