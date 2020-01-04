@@ -120,9 +120,3 @@ h2 {
     letter-spacing: 4px;
     background: linear-gradient(to bottom, #0593e6 0, #0488d4 50%, #0487d3 51%, #046ca8 100%);
 }
-
-.footer {
-    position: fixed;
-    width: 100%;
-    bottom: 1%;
-}
