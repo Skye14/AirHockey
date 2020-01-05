@@ -18,9 +18,9 @@ import { trigger, style, transition, animate, keyframes } from '@angular/animati
         trigger('bounceAnimate', [
             transition('start <=> end', [
                 animate('300ms ease-in', keyframes([
-                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', color: '#8a8a8a' }),
-                    style({ transform: 'translate3d(0,-3px,0)', fontSize: '27px', color: '#ffffff' }),
-                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', color: '#8a8a8a' }),
+                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', textShadow: '1px -1px 3px #e2e2e2' }),
+                    style({ transform: 'translate3d(0,-3px,0)', fontSize: '30px', color: '#ffffff' }),
+                    style({ transform: 'translate3d(0,0,0)', fontSize: '20px', textShadow: '1px -1px 3px #e2e2e2' }),
                 ]))
             ])
         ]),
