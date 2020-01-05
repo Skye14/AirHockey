@@ -1,10 +1,9 @@
 <div class="container">
-    <p class="title" *ngIf="!isVictory">{{ "GameOver.Loss" | translate }}</p>
-    <p class="title" *ngIf="isVictory">{{ "GameOver.Win" | translate }}</p>
-    <hr>
     <div class="block-close">
         <p mat-dialog-close class="close">
             <i class="material-icons">close</i>
         </p>
     </div>
+    <p class="title" *ngIf="!isVictory">{{ "GameOver.Loss" | translate }}</p>
+    <p class="title" *ngIf="isVictory">{{ "GameOver.Win" | translate }}</p>
 </div>

@@ -1,11 +1,11 @@
 .container {
-    width: 300px;
+    width: 345px;
     text-align: center;
 }
 
 .title {
-    margin-top: 5px;
-    margin-bottom: 24px;
+    margin-top: 18px;
+    margin-bottom: 20px;
     font-size: 30px;
     letter-spacing: 7px;
     font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
@@ -15,30 +15,25 @@
 
 .block-close {
     width: 100%;
+    height: 15px;
     display: flex;
-    margin-top: 24px;
     justify-content: flex-end;
+    margin-top: -17px;
+    margin-left: 15px;
 }
 
 .close {
-    width: 40px;
-    height: 40px;
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .block-close :hover {
-    background: rgb(236, 235, 235);
-    border-radius: 50%;
-}
-
-.block-close :active {
-    background: rgb(221, 221, 221);
-    border-radius: 50%;
+    color: #9e2222;
 }
 
 .material-icons {
     color: #f83a3a;
-    line-height: 40px;
+    line-height: 18px;
+    font-size: 15px;
 }
