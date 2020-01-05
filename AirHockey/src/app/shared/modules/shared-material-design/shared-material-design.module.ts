@@ -13,6 +13,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
     imports: [
@@ -28,7 +30,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatSliderModule,
         MatDialogModule,
         MatIconModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatBottomSheetModule,
+        MatListModule
     ],
     exports: [
         MatToolbarModule,
@@ -42,7 +46,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatSliderModule,
         MatDialogModule,
         MatIconModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatBottomSheetModule,
+        MatListModule
     ]
 })
 export class SharedMaterialDesignModule { }

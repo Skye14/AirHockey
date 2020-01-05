@@ -1,23 +1,21 @@
-<div class="container">
-    <ul>
-        <li>
-            {{ "HelpSheet.GateUp" | translate }}: {{ "HelpSheet.KeyPress" | translate }}
-            <span>&laquo;{{ "HelpSheet.KeyW" | translate }}&raquo;</span>
-        </li>
-        <li>
-            {{ "HelpSheet.GateDown" | translate }}: {{ "HelpSheet.KeyPress" | translate }}
-            <span>&laquo;{{ "HelpSheet.KeyS" | translate }}&raquo;</span>
-        </li>
-        <li>
-            {{ "HelpSheet.StartPauseMessage" | translate }}
-            <span>&laquo;{{ "HelpSheet.StartPause" | translate }}&raquo;</span> {{ "HelpSheet.SpaceMessage" | translate }}
-            <span>&laquo;{{ "HelpSheet.keySpace" | translate }}&raquo;</span>
-        </li>
-    </ul>
-    <hr>
+<mat-nav-list>
     <div class="block-close">
-        <p mat-dialog-close class="close">
+        <p class="close" (click)="closePopup($event)">
             <i class="material-icons">close</i>
         </p>
     </div>
-</div>
+    <p>
+        <span mat-line class="message">{{ "HelpSheet.GateUp" | translate }}: </span>
+        <span mat-line>&laquo;{{ "HelpSheet.KeyW" | translate }}&raquo;</span>
+    </p>
+    <p>
+        <span mat-line class="message">{{ "HelpSheet.GateDown" | translate }}: </span>
+        <span mat-line>&laquo;{{ "HelpSheet.KeyS" | translate }}&raquo;</span>
+    </p>
+    <p>
+        <span mat-line class="message">{{ "HelpSheet.StartPauseMessage" | translate }}</span>
+        <span mat-line>&laquo;{{ "HelpSheet.StartPause" | translate }}&raquo; </span>
+        <span mat-line class="message">{{ "HelpSheet.SpaceMessage" | translate }} </span>
+        <span mat-line>&laquo;{{ "HelpSheet.keySpace" | translate }}&raquo;</span>
+    </p>
+</mat-nav-list>

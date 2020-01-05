@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { Subscription, fromEvent } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material';
 
 import { AuthService } from './../../shared/services/auth.service';
 import { GameSettingsModel } from 'src/app/shared/models/game-settings.model';
@@ -43,13 +44,18 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     constructor(private router: Router,
                 private authService: AuthService,
                 private gameService: GameService,
-                private popup: MatDialog) {
+                private popup: MatDialog,
+                private bottomSheetPopup: MatBottomSheet) {
         this.gameSettings = this.authService.gameSettings;
     }
 
     ngOnInit(): void {
         this.eventHandlerStartOrPause();
         this.checkGameScore();
+        if (!this.gameSettings.isInitialHelpSheet) {
+            this.gameSettings.isInitialHelpSheet = true;
+            this.bottomSheetPopup.open(HelpSheetComponent);
+        }
     }
 
     private checkGameScore(): void {
@@ -96,12 +102,8 @@ export class GameInfoComponent implements OnInit, OnDestroy {
             this.isPause = !this.isPause;
             this.gameService.pauseGame(this.startGame, this.isPause);
         }
-        const popup = this.popup.open(HelpSheetComponent);
+        this.bottomSheetPopup.open(HelpSheetComponent);
         this.isPopupHelpOpen = !this.isPopupHelpOpen;
-
-        popup.afterClosed().subscribe(() => {
-            this.isPopupHelpOpen = !this.isPopupHelpOpen;
-        });
     }
 
     public onGetHome(): void {

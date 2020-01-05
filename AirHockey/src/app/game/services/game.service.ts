@@ -108,7 +108,7 @@ export class GameService {
                 this.restartPositionOfBall();
             } else if (this.ball.positionX + this.ball.width >= this.field.width - this.gateRight.width) {
                 if (lowerBallPosY > Math.ceil(this.gateRight.positionY) && topBallPosY < lowerGateRightPosY) {
-                    if (this.ball.positionX + this.ball.width / 2 < this.gateLeft.width) {
+                    if (this.ball.positionX + this.ball.width < this.gateRight.width) {
                         this.score.leftGate++;
                         this.restartPositionOfBall();
                     } else {

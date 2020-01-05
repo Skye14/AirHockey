@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatBottomSheetRef } from '@angular/material';
 
 @Component({
     selector: 'app-help-sheet',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HelpSheetComponent {
 
-    constructor() { }
+    constructor(private bottomSheetRef: MatBottomSheetRef<HelpSheetComponent>) { }
+
+    public closePopup(event: MouseEvent) {
+        this.bottomSheetRef.dismiss();
+        event.preventDefault();
+    }
 }
