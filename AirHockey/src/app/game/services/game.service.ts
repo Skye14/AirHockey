@@ -80,7 +80,7 @@ export class GameService {
         const posY = this.ball.positionY;
         const lowerGateLeftPosY = this.gateLeft.positionY + this.gateLeft.height;
         const lowerGateRightPosY = this.gateRight.positionY + this.gateRight.height;
-        const lowerBallPosY = this.ball.positionY + this.ball.height / 2;
+        const lowerBallPosY = this.ball.positionY + this.ball.height;
         const topBallPosY = this.ball.positionY - this.ball.height;
 
         if (this.startGame && this.isPause) {
@@ -99,8 +99,8 @@ export class GameService {
                         this.score.rightGate++;
                         this.restartPositionOfBall();
                     } else {
-                        this.increasePositionXOfBall(posX);
                         this.changeAngleOfBallForGate(this.gateLeft);
+                        this.increasePositionXOfBall(posX);
                     }
                 }
             } else if (this.ball.positionX >= this.field.width) {
@@ -108,7 +108,7 @@ export class GameService {
                 this.restartPositionOfBall();
             } else if (this.ball.positionX + this.ball.width >= this.field.width - this.gateRight.width) {
                 if (lowerBallPosY > Math.ceil(this.gateRight.positionY) && topBallPosY < lowerGateRightPosY) {
-                    if (this.ball.positionX + this.ball.width < this.gateRight.width) {
+                    if (this.ball.positionX + this.ball.width / 2 < this.gateRight.width) {
                         this.score.leftGate++;
                         this.restartPositionOfBall();
                     } else {
@@ -171,7 +171,7 @@ export class GameService {
 
     private reducePositionXOfBall(posX: number): void {
         if (Math.abs(this.ball.stepY) < 1.2) {
-            this.ball.stepX = 2.5;
+            this.ball.stepX = 2.6;
         } else {
             this.ball.stepX = 2;
         }
@@ -188,7 +188,7 @@ export class GameService {
 
     private increasePositionXOfBall(posX: number): void {
         if (Math.abs(this.ball.stepY) < 1.2) {
-            this.ball.stepX = -2.5;
+            this.ball.stepX = -2.6;
         } else {
             this.ball.stepX = -2;
         }
