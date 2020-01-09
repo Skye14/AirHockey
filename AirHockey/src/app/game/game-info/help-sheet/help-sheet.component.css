@@ -25,11 +25,18 @@ p {
     padding-bottom: 20px;
 }
 
+span {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 span:first-child {
     padding-right: 5px;
 }
 
 .message {
-    text-transform: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    color: rgb(66, 66, 66);
 }
