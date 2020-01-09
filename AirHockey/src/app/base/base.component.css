@@ -17,8 +17,9 @@
 .mat-card {
     width: 75%;
     margin: 3% auto;
-    height: 500px;
+    min-height: 500px;
     background: #fefeff;
+    padding-bottom: 30px;
 }
 
 h2 {
