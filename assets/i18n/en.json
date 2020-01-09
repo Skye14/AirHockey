@@ -37,9 +37,9 @@
         "GateUp": "Gate up",
         "GateDown": "Gate down",
         "KeyPress": "key press",
-        "StartPauseMessage": "Start the game or pause click:",
+        "StartPauseMessage": "Start / pause the game, click:",
         "StartPause": "start / pause",
-        "SpaceMessage": "or press",
+        "SpaceMessage": "button or press",
         "keySpace": "space",
         "KeyW": "W",
         "KeyS": "S",
@@ -56,7 +56,7 @@
         "ContactInfo": "Contact information"
     },
     "FieldSizes": {
-        "label": "Field sizes",
+        "label": "Field size",
         "small": "small",
         "medium": "medium",
         "large": "large"

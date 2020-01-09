@@ -37,9 +37,9 @@
         "GateUp": "Ворота вверх",
         "GateDown": "Ворота вниз",
         "KeyPress": "нажмите клавишу",
-        "StartPauseMessage": "Начать игру или сделать паузу нажмите:",
+        "StartPauseMessage": "Начать / остановить игру, нажмите:",
         "StartPause": "старт / пауза",
-        "SpaceMessage": "или клавишу",
+        "SpaceMessage": "кнопку или клавишу",
         "keySpace": "пробел",
         "KeyW": "W",
         "KeyS": "S",
@@ -56,7 +56,7 @@
         "ContactInfo": "Контактная информация"
     },
     "FieldSizes": {
-        "label": "Размеры поля",
+        "label": "Размер поля",
         "small": "маленький",
         "medium": "средний",
         "large": "большой"
