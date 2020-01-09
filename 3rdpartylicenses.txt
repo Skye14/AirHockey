@@ -85,6 +85,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@angular/material/bottom-sheet
+
 @angular/material/button
 
 @angular/material/card
@@ -94,6 +96,8 @@ THE SOFTWARE.
 @angular/material/dialog
 
 @angular/material/form-field
+
+@angular/material/list
 
 @angular/material/radio
 
