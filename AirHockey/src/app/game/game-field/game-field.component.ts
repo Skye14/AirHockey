@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
+import { trigger, style, transition, animate, keyframes } from '@angular/animations';
 
 import { Field } from './models/field.model';
 import { Gate } from './models/gate.model';
@@ -15,7 +16,25 @@ import { FieldSizesEnum } from './enums/field-sizes-enum.enum';
 @Component({
     selector: 'app-game-field',
     templateUrl: './game-field.component.html',
-    styleUrls: ['./game-field.component.css']
+    styleUrls: ['./game-field.component.css'],
+    animations: [
+        trigger('redFieldShadow', [
+            transition('start <=> end', [
+                animate('300ms ease-in', keyframes([
+                    style({ transform: 'translate3d(0,0,0)', boxShadow: ' 0 0 10px 2px rgb(70, 2, 2)' }),
+                    style({ transform: 'translate3d(0,0,0)', boxShadow: 'none' }),
+                ]))
+            ])
+        ]),
+        trigger('greenFieldShadow', [
+            transition('start <=> end', [
+                animate('300ms ease-in', keyframes([
+                    style({ transform: 'translate3d(0,0,0)', boxShadow: ' 0 0 10px 2px rgb(3, 129, 3)' }),
+                    style({ transform: 'translate3d(0,0,0)', boxShadow: 'none' }),
+                ]))
+            ])
+        ])
+    ],
 })
 export class GameFieldComponent implements OnInit, OnDestroy {
     @ViewChild('canvas', { static: true })
@@ -36,6 +55,8 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     public gameSettings: GameSettingsModel;
     public field: Field;
     public fieldSizesEnum: typeof FieldSizesEnum = FieldSizesEnum;
+    public animateForGateRight = true;
+    public animateForGateLeft = true;
 
     constructor(private gameService: GameService, private authService: AuthService) {
         this.gameSettings = this.authService.gameSettings;
@@ -72,6 +93,14 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.contextCanvas.arc(this.ball.positionX, this.ball.positionY, this.ball.width, 0, 2 * Math.PI, true);
         this.contextCanvas.fill();
         this.contextCanvas.closePath();
+    }
+
+    private checkAnimationForField(): void {
+        if (this.gameService.goalForGateRight) {
+            this.animateForGateRight = !this.animateForGateRight;
+        } else if (this.gameService.goalForGateLeft) {
+            this.animateForGateLeft = ! this.animateForGateLeft;
+        }
     }
 
     public getFieldSize(event: any): void {
@@ -117,6 +146,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
         this.intervalBall = setInterval(() => {
             this.ball = this.gameService.moveBall();
             this.draw();
+            this.checkAnimationForField();
         }, this.ball.speed);
     }
 

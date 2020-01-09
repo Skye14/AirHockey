@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription, fromEvent } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { MatBottomSheet } from '@angular/material';
+import { trigger, style, transition, animate, keyframes } from '@angular/animations';
 
 import { AuthService } from './../../shared/services/auth.service';
 import { GameSettingsModel } from 'src/app/shared/models/game-settings.model';
@@ -10,7 +11,6 @@ import { GameService } from './../services/game.service';
 import { Score } from './models/score.model';
 import { HelpSheetComponent } from './help-sheet/help-sheet.component';
 import { VictoryOrLossComponent } from './victory-or-loss/victory-or-loss.component';
-import { trigger, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
     selector: 'app-game-info',
@@ -23,7 +23,7 @@ import { trigger, style, transition, animate, keyframes } from '@angular/animati
                     style({ transform: 'translate3d(0,0,0)', fontSize: '20px', textShadow: '1px -1px 3px #e2e2e2' }),
                 ]))
             ])
-        ]),
+        ])
     ],
     templateUrl: './game-info.component.html',
     styleUrls: ['./game-info.component.css']
@@ -114,10 +114,11 @@ export class GameInfoComponent implements OnInit, OnDestroy {
         this.router.navigate(['']);
     }
 
-    public onStartPause(): void {
+    public onStartPause(event: any): void {
         this.startGame = true;
         this.isPause = !this.isPause;
         this.gameService.pauseGame(this.startGame, this.isPause);
+        event.preventDefault();
     }
 
     private eventHandlerStartOrPause(): void {

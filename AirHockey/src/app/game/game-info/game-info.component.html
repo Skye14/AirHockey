@@ -23,7 +23,7 @@
 
             <div class="btn-box">
                 <button mat-raised-button class="btn" (click)="onGetHome()">{{ "Button.Quit" | translate }}</button>
-                <button mat-raised-button class="btn" (click)="onStartPause()">
+                <button mat-raised-button class="btn" (click)="onStartPause($event)">
                     <p *ngIf="!isPause">{{ "Button.Start" | translate }}</p>
                     <p *ngIf="isPause">{{ "Button.Pause" | translate }}</p>
                 </button>

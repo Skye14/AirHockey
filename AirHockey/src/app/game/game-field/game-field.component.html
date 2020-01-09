@@ -18,8 +18,8 @@
         </div>
     </section>
     <div class="block-canvas">
-        <canvas #canvas width="{{field.width}}" height="{{field.height}}">
-      {{ "Canvas.message" | translate }}
-    </canvas>
+        <canvas #canvas [@redFieldShadow]="animateForGateRight ? 'start' : 'end'" [@greenFieldShadow]="animateForGateLeft ? 'start' : 'end'" width="{{field.width}}" height="{{field.height}}">
+                {{ "Canvas.message" | translate }}
+        </canvas>
     </div>
 </div>
