@@ -22,7 +22,7 @@ export class AuthService {
         this.gameSettingsModel = new GameSettingsModel();
         this.gameSettingsModel.username = 'Gamer';
         this.gameSettingsModel.language = Language.english;
-        this.gameSettingsModel.difficulty = Difficulty.normal;
+        this.gameSettingsModel.difficulty = Difficulty.hard;
         this.gameSettingsModel.maxScore = MaxScore.score20;
         this.gameSettingsModel.avatar = avatar1;
         this.gameSettingsModel.fieldSize = FieldSizesEnum.small;

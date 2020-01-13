@@ -1,16 +1,30 @@
 .container {
-    width: 345px;
+    min-width: 345px;
     text-align: center;
 }
 
-.title {
-    margin-top: 18px;
-    margin-bottom: 20px;
+.title-loss {
+    margin-bottom: 10px;
     font-size: 30px;
-    letter-spacing: 7px;
-    font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+    letter-spacing: 5px;
     text-shadow: 4px 1px 2px rgb(211, 211, 211);
     color: rgb(56, 56, 56);
+}
+
+.title-loss:first-child {
+    margin-top: 35px;
+}
+
+.title-win {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-shadow: 4px 1px 2px rgb(175, 234, 248);
+    color: #057cc0;
+}
+
+.title-win:first-child {
+    margin-top: 35px;
 }
 
 .block-close {
@@ -36,4 +50,12 @@
     color: #f83a3a;
     line-height: 18px;
     font-size: 15px;
+}
+
+.img-smile {
+    width: 100px;
+}
+
+.btn {
+    margin-top: 10px;
 }

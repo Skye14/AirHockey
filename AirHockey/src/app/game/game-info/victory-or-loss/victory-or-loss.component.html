@@ -4,6 +4,15 @@
             <i class="material-icons">close</i>
         </p>
     </div>
-    <p class="title" *ngIf="!isVictory">{{ "GameOver.Loss" | translate }}</p>
-    <p class="title" *ngIf="isVictory">{{ "GameOver.Win" | translate }}</p>
+    <div *ngIf="!isVictory">
+        <p class="title-loss">{{ gameSettings.username }}</p>
+        <p class="title-loss">{{ "GameOver.Loss" | translate }}</p>
+        <img class="img-smile" src="../../../../assets/image/smile/loss-smile.jpg" alt="victory-smile">
+    </div>
+    <div *ngIf="isVictory">
+        <p class="title-win">{{ gameSettings.username }}</p>
+        <p class="title-win"> {{ "GameOver.Win" | translate }}</p>
+        <img class="img-smile" src="../../../../assets/image/smile/victory-smile.jpg" alt="victory-smile">
+    </div>
+    <button mat-dialog-close mat-raised-button class="btn">ok</button>
 </div>

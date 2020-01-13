@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GameService } from '../../services/game.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { GameSettingsModel } from 'src/app/shared/models/game-settings.model';
 
 @Component({
     selector: 'app-victory-or-loss',
@@ -9,8 +11,11 @@ import { GameService } from '../../services/game.service';
 })
 export class VictoryOrLossComponent implements OnInit {
     public isVictory: boolean;
+    public gameSettings: GameSettingsModel;
 
-    constructor(private gameService: GameService) { }
+    constructor(private gameService: GameService, private authService: AuthService) {
+        this.gameSettings = this.authService.gameSettings;
+    }
 
     ngOnInit() {
         this.isVictory = this.gameService.isVictory;
