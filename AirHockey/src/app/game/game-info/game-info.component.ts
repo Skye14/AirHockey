@@ -2,14 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription, fromEvent } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { MatBottomSheet } from '@angular/material';
 import { trigger, style, transition, animate, keyframes } from '@angular/animations';
 
 import { AuthService } from './../../shared/services/auth.service';
 import { GameSettingsModel } from 'src/app/shared/models/game-settings.model';
 import { GameService } from './../services/game.service';
 import { Score } from './models/score.model';
-import { HelpSheetComponent } from './help-sheet/help-sheet.component';
 import { VictoryOrLossComponent } from './victory-or-loss/victory-or-loss.component';
 
 @Component({
@@ -44,18 +42,13 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     constructor(private router: Router,
                 private authService: AuthService,
                 private gameService: GameService,
-                private popup: MatDialog,
-                private bottomSheetPopup: MatBottomSheet) {
+                private popup: MatDialog) {
         this.gameSettings = this.authService.gameSettings;
     }
 
     ngOnInit(): void {
         this.eventHandlerStartOrPause();
         this.checkGameScore();
-        if (!this.gameSettings.isInitialHelpSheet) {
-            this.gameSettings.isInitialHelpSheet = true;
-            this.bottomSheetPopup.open(HelpSheetComponent);
-        }
     }
 
     private checkGameScore(): void {
@@ -95,15 +88,6 @@ export class GameInfoComponent implements OnInit, OnDestroy {
             this.isVictoryOrLossPopup = !this.isVictoryOrLossPopup;
             this.checkGameScore();
         });
-    }
-
-    public openHelpSheet(): void {
-        if (this.isPause && this.startGame) {
-            this.isPause = !this.isPause;
-            this.gameService.pauseGame(this.startGame, this.isPause);
-        }
-        this.bottomSheetPopup.open(HelpSheetComponent);
-        this.isPopupHelpOpen = !this.isPopupHelpOpen;
     }
 
     public onGetHome(): void {

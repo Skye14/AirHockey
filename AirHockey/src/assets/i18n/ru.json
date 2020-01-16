@@ -33,18 +33,6 @@
     "Canvas": {
         "message": "Your browser does not support Canvas"
     },
-    "HelpSheet": {
-        "GateUp": "Ворота вверх",
-        "GateDown": "Ворота вниз",
-        "KeyPress": "нажмите клавишу",
-        "StartPauseMessage": "Начать / остановить игру, нажмите:",
-        "StartPause": "старт / пауза",
-        "SpaceMessage": "кнопку или клавишу",
-        "keySpace": "пробел",
-        "KeyW": "W",
-        "KeyS": "S",
-        "BtnClose": "Закрыть"
-    },
     "BotName": "Мр_Ботик",
     "GameOver": {
         "Win": "Вы победили",

@@ -13,7 +13,6 @@ import { SharedMaterialDesignModule } from './shared/modules/shared-material-des
 import { GameComponent } from './game/game.component';
 import { GameInfoComponent } from './game/game-info/game-info.component';
 import { GameFieldComponent } from './game/game-field/game-field.component';
-import { HelpSheetComponent } from './game/game-info/help-sheet/help-sheet.component';
 import { VictoryOrLossComponent } from './game/game-info/victory-or-loss/victory-or-loss.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -29,7 +28,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         GameComponent,
         GameInfoComponent,
         GameFieldComponent,
-        HelpSheetComponent,
         VictoryOrLossComponent,
         FooterComponent
     ],
@@ -49,7 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    entryComponents: [HelpSheetComponent, VictoryOrLossComponent],
+    entryComponents: [VictoryOrLossComponent],
     providers: [],
     bootstrap: [
         AppComponent

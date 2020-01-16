@@ -33,18 +33,6 @@
     "Canvas": {
         "message": "Ваш браузер не поддерживает Canvas"
     },
-    "HelpSheet": {
-        "GateUp": "Gate up",
-        "GateDown": "Gate down",
-        "KeyPress": "key press",
-        "StartPauseMessage": "Start / pause the game, click:",
-        "StartPause": "start / pause",
-        "SpaceMessage": "button or press",
-        "keySpace": "space",
-        "KeyW": "W",
-        "KeyS": "S",
-        "BtnClose": "Close"
-    },
     "BotName": "Mr_Botik",
     "GameOver": {
         "Win": "You win",
