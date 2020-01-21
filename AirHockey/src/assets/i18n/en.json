@@ -48,5 +48,9 @@
         "small": "small",
         "medium": "medium",
         "large": "large"
+    },
+    "Helps": {
+        "checkbox": "helps",
+        "bottomHelp": "start / pause - press space"
     }
 }

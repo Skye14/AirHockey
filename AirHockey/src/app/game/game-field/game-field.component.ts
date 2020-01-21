@@ -57,6 +57,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     public fieldSizesEnum: typeof FieldSizesEnum = FieldSizesEnum;
     public animateForGateRight = true;
     public animateForGateLeft = true;
+    public isCheckedHelps = false;
 
     constructor(private gameService: GameService, private authService: AuthService) {
         this.gameSettings = this.authService.gameSettings;
@@ -147,6 +148,7 @@ export class GameFieldComponent implements OnInit, OnDestroy {
             this.ball = this.gameService.moveBall();
             this.draw();
             this.checkAnimationForField();
+            this.isCheckedHelps = this.gameService.isCheckedHelps;
         }, this.ball.speed);
     }
 

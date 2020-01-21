@@ -17,9 +17,25 @@
             </div>
         </div>
     </section>
-    <div class="block-canvas">
-        <canvas #canvas [@redFieldShadow]="animateForGateRight ? 'start' : 'end'" [@greenFieldShadow]="animateForGateLeft ? 'start' : 'end'" width="{{field.width}}" height="{{field.height}}">
-            {{ "Canvas.message" | translate }}
-        </canvas>
+    <div class="flex">
+        <div [ngClass]="{ hidden : !isCheckedHelps }" class="block-help left-help">
+            <div class="arrow arrow-top">
+                <i class="fa fa-long-arrow-up fa-4x"></i>
+                <p class="message">W</p>
+            </div>
+            <div class="arrow arrow-bottom">
+                <p class="message">S</p>
+                <i class="fa fa-long-arrow-down fa-4x"></i>
+            </div>
+        </div>
+        <div class="block-canvas">
+            <canvas #canvas [@redFieldShadow]="animateForGateRight ? 'start' : 'end'" [@greenFieldShadow]="animateForGateLeft ? 'start' : 'end'" width="{{field.width}}" height="{{field.height}}">
+                {{ "Canvas.message" | translate }}
+            </canvas>
+            <div [ngClass]="{ hidden : !isCheckedHelps }" class="help-bottom">
+                {{ "Helps.bottomHelp" | translate }}
+            </div>
+        </div>
+        <div class="block-empty"></div>
     </div>
 </div>

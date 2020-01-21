@@ -5,6 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         SharedMaterialDesignModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        AngularFontAwesomeModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

@@ -38,6 +38,7 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     public score: Score;
     public animateForGateRight = true;
     public animateForGateLeft = true;
+    public isCheckedHelps = false;
 
     constructor(private router: Router,
                 private authService: AuthService,
@@ -49,6 +50,14 @@ export class GameInfoComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.eventHandlerStartOrPause();
         this.checkGameScore();
+        if (!this.gameSettings.isInitialHelp) {
+            this.gameSettings.isInitialHelp = true;
+            this.isCheckedHelps = true;
+            this.gameService.isCheckedHelps = this.isCheckedHelps;
+        } else {
+            this.isCheckedHelps = false;
+            this.gameService.isCheckedHelps = this.isCheckedHelps;
+        }
     }
 
     private checkGameScore(): void {
@@ -56,6 +65,7 @@ export class GameInfoComponent implements OnInit, OnDestroy {
         let scoreR = this.score.rightGate;
         let scoreL = this.score.leftGate;
         this.interval = setInterval(() => {
+            this.gameService.isCheckedHelps = this.isCheckedHelps;
             if (this.score.rightGate !== this.gameSettings.maxScore && this.score.leftGate !== this.gameSettings.maxScore) {
                 this.score = this.gameService.getScore(this.gameSettings.maxScore);
                 if (scoreR !== this.score.rightGate) {

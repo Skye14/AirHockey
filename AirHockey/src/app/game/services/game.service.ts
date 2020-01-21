@@ -23,6 +23,7 @@ export class GameService {
     public isPause = false;
     public goalForGateRight = false;
     public goalForGateLeft = false;
+    public isCheckedHelps = false;
 
     constructor() {
     }

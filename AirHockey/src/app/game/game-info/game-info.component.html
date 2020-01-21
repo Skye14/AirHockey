@@ -27,6 +27,7 @@
                     <p *ngIf="!isPause">{{ "Button.Start" | translate }}</p>
                     <p *ngIf="isPause">{{ "Button.Pause" | translate }}</p>
                 </button>
+                <mat-checkbox class="checkbox" color="primary" [(ngModel)]="isCheckedHelps">{{ 'Helps.checkbox' | translate }}</mat-checkbox>
             </div>
         </div>
 

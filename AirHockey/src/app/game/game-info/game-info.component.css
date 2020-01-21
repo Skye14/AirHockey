@@ -36,6 +36,7 @@
 }
 
 .btn-box {
+    height: 60px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -54,6 +55,12 @@
     color: #000;
     background: linear-gradient(to bottom, #fac826 0, #ecc557 47%, #ebc868 50%, #ebc868 50%, #e1b02a 51%, #c4932e 100%);
     text-shadow: 0 1px 0 #fff000;
+}
+
+.checkbox {
+    line-height: 65px;
+    font-size: 17px;
+    letter-spacing: 0.8px;
 }
 
 .flex-box {

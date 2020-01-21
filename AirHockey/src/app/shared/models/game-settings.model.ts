@@ -10,6 +10,6 @@ export class GameSettingsModel {
     public difficulty: Difficulty;
     public maxScore: MaxScore;
     public fieldSize: FieldSizesEnum;
-    public isInitialHelpSheet: boolean;
+    public isInitialHelp: boolean;
 }
 
