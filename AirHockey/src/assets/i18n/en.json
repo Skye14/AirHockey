@@ -51,6 +51,7 @@
     },
     "Helps": {
         "checkbox": "helps",
-        "bottomHelp": "start / pause - press space"
-    }
+        "bottomHelp": "start / pause - press f"
+    },
+    "BlockPause": "pause"
 }

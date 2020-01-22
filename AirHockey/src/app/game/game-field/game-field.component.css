@@ -43,6 +43,7 @@ label {
 }
 
 .block-canvas {
+    position: relative;
     margin: 100px 0px;
 }
 
@@ -109,4 +110,47 @@ canvas {
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 1px 1px 1px rgb(3, 15, 83);
+}
+
+.block-pause {
+    position: absolute;
+    width: 35%;
+    height: 20%;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    text-align: center;
+    border-radius: 3px;
+    background: rgb(146, 146, 146);
+    background: radial-gradient(circle, rgb(138, 138, 138) -75%, rgba(58, 58, 59, 1) 90%);
+    z-index: 2;
+}
+
+.block-pause p {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 1px 3px rgb(3, 15, 83);
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.overlayBackdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, .32);
 }

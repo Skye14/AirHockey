@@ -29,7 +29,7 @@ import { VictoryOrLossComponent } from './victory-or-loss/victory-or-loss.compon
 export class GameInfoComponent implements OnInit, OnDestroy {
     private startGame = false;
     private interval;
-    private keyCodeSpace = 32;
+    private keyCodeSpace = 70;
     private isPopupHelpOpen = false;
     private isVictoryOrLossPopup = false;
     private subscription: Subscription;

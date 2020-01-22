@@ -32,10 +32,16 @@
             <canvas #canvas [@redFieldShadow]="animateForGateRight ? 'start' : 'end'" [@greenFieldShadow]="animateForGateLeft ? 'start' : 'end'" width="{{field.width}}" height="{{field.height}}">
                 {{ "Canvas.message" | translate }}
             </canvas>
+            <div [ngClass]="{ hidden : !startGame }">
+                <div [ngClass]="{ hidden : isPause }" class="block-pause">
+                    <p>{{ 'BlockPause' | translate }}</p>
+                </div>
+            </div>
             <div [ngClass]="{ hidden : !isCheckedHelps }" class="help-bottom">
                 {{ "Helps.bottomHelp" | translate }}
             </div>
         </div>
         <div class="block-empty"></div>
     </div>
+    <div [ngClass]="{ overlayBackdrop : !isPause && startGame }"></div>
 </div>

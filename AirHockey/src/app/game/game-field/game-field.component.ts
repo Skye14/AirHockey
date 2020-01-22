@@ -58,6 +58,8 @@ export class GameFieldComponent implements OnInit, OnDestroy {
     public animateForGateRight = true;
     public animateForGateLeft = true;
     public isCheckedHelps = false;
+    public isPause = false;
+    public startGame = false;
 
     constructor(private gameService: GameService, private authService: AuthService) {
         this.gameSettings = this.authService.gameSettings;
@@ -149,6 +151,8 @@ export class GameFieldComponent implements OnInit, OnDestroy {
             this.draw();
             this.checkAnimationForField();
             this.isCheckedHelps = this.gameService.isCheckedHelps;
+            this.isPause = this.gameService.isPause;
+            this.startGame = this.gameService.startGame;
         }, this.ball.speed);
     }
 
