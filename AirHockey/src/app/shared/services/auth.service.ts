@@ -26,6 +26,7 @@ export class AuthService {
         this.gameSettingsModel.maxScore = MaxScore.score20;
         this.gameSettingsModel.avatar = avatar1;
         this.gameSettingsModel.fieldSize = FieldSizesEnum.small;
+        this.gameSettings.isInitialHelp = true;
         return this.gameSettingsModel;
     }
 
