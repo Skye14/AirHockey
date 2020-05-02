@@ -84,9 +84,13 @@ canvas {
 
 .message {
     width: 50px;
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 25px;
     font-family: Algerian;
+    color: #313131;
+}
+
+.fa {
+    color: #313131;
 }
 
 .fa-long-arrow-up {
@@ -106,10 +110,10 @@ canvas {
     height: 30px;
     margin-top: 10px;
     text-align: center;
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 17px;
+    color: #313131;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 1px rgb(3, 15, 83);
+    text-shadow: 1px 1px 1px rgb(151, 151, 151);
 }
 
 .block-pause {
@@ -121,8 +125,11 @@ canvas {
     left: 50%;
     text-align: center;
     border-radius: 3px;
+    color: rgb(255, 255, 255);
     background: rgb(146, 146, 146);
-    background: radial-gradient(circle, rgb(138, 138, 138) -75%, rgba(58, 58, 59, 1) 90%);
+    text-shadow: 3px 1px 2px rgb(3, 15, 83);
+    box-shadow: 0px 0px 10px -2px rgb(5, 5, 5);
+    background: linear-gradient(to bottom, #077bbe 0, #038bda 50%, #038bda 51%, #077bbe 100%);
     z-index: 2;
 }
 
